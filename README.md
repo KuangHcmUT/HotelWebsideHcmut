@@ -1,2 +1,2 @@
-# HotelWebsideHcmut
+# HotelWebsiteHcmut
 Lập trình Web Assignment
