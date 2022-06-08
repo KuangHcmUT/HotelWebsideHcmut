@@ -6,8 +6,8 @@
 			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
 				<nav class="main_nav">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li class="active"><a href="../index.php">Home</a></li>
-						<li><a href="../room.php">Rooms</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
+						<li><a href="room.php">Rooms</a></li>
 						<li><a href="#">Booking</a></li>
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">Contact</a></li>
