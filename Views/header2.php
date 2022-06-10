@@ -7,18 +7,11 @@
 				<nav class="main_nav">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
 						<li class="active"><a href="../index.php">Home</a></li>
-						<li><a href="../room.php">Rooms</a></li>
-						<li><a href="#">Booking</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#bookingList">BookingList</a></li>
+						<li><a href="#confirmBooking">ConfirmBooking</a></li>
 					</ul>
 				</nav>
-				<div class="book_button"><a href="#">Book Online</a></div>
-				<div class="header_phone d-flex flex-row align-items-center justify-content-center">
-					<img src="images/phone.png" alt="">
-					<span>0123-456789</span>
-				</div>
-
+				<div class="book_button"><a href="#">Log Out</a></div>
 				<!-- Hamburger Menu -->
 				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			</div>

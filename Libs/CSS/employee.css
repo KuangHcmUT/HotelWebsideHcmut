@@ -1,12 +1,16 @@
-body {
-    background-image: url("../../images/index.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.header_content {
+    height: 90px;
 }
 
-.container {
-    padding: 0;
+.employee-con {
+    padding-top: 20px;
+    min-height: 480px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90%;
+    }
 }
 
 .btn:hover {
@@ -14,7 +18,7 @@ body {
 }
 
 .title {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -28,7 +32,23 @@ table tr td {
     padding: 0;
 }
 
-#bookingList .row .col-md-2,
-#bookingList .row .col-md-1 {
+.row .col-md-2,
+.row .col-md-1 {
     padding: 5px;
+}
+
+.table-title {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+.table-records {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer_content {
+    padding-bottom: 0;
 }
