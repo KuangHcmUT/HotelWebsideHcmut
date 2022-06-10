@@ -20,15 +20,7 @@
             $this->hotelDB->close();
         }
 
-        public function insertBooking($booking){//booking is an obj
-            $sql = "INSERT INTO booking (booking_id, room_id, customer_id, check_in, check_out, total_price) VALUES ('".$booking->booking_id."', '".$booking->room_id."', '".$booking->customer_id."', '".$booking->check_in."', '".$booking->check_out."', '".$booking->total_price."')";
-            if ($this->hotelDB->query($sql) === TRUE) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $this->hotelDB->error;
-            }
-            // code = copilot must be changed
-        }
+        
 
 
     }

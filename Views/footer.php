@@ -1,6 +1,6 @@
 <!-- Footer -->
 
-<footer class="footer">
+<footer class="footer" style="padding-top: 40px;">
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
