@@ -31,7 +31,7 @@
 <?php include '../Views/header2.php'; ?>
 
     <div class="container employee-con" style="margin-top: 100px;">
-        <div id="bookingList" style="display: none;">
+        <div id="bookingList" >
             <div class="title text-center mb-1">Danh sách đặt phòng</div>
             <div class="row table-title">
                 <div class="col-md-2 text-center">Tên Khách Hàng</div>
@@ -151,7 +151,7 @@
                     </tr>
             </table> -->
         </div>
-        <div id="confirmBooking" >
+        <div id="confirmBooking" style="display: none;">
             <div class="title text-center mb-1">Danh sách xếp phòng</div>
             <div class="row table-title">
                 <div class="col-md-2 text-center">Tên Khách Hàng</div>
