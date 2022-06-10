@@ -143,7 +143,7 @@
 						<div class="icon_box_icon"><img src="images/icon_1.svg" class="svg" alt="https://www.flaticon.com/authors/monkik"></div>
 						<div class="icon_box_title"><h2>Fabulous Resort</h2></div>
 						<div class="icon_box_text">
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.</p>
+							<p>No need to invest too expensive for a second house on the beach, you still have the opportunity to enjoy a quiet living space, harmony with nature, and experience the new resort style of the era: "Seafront living" - enjoy life in the style of the discerning and class.</p>
 						</div>
 					</div>
 				</div>
@@ -154,7 +154,7 @@
 						<div class="icon_box_icon"><img src="images/icon_2.svg" class="svg" alt="https://www.flaticon.com/authors/monkik"></div>
 						<div class="icon_box_title"><h2>Infinity Pool</h2></div>
 						<div class="icon_box_text">
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.</p>
+							<p>The best way to enjoy all this beautiful, warm weather is to go to the pool. There’s nothing quite like diving into an ice-cold pool on a hot summer day to cool off.</p>
 						</div>
 					</div>
 				</div>
@@ -165,7 +165,7 @@
 						<div class="icon_box_icon"><img src="images/icon_3.svg" class="svg" alt="https://www.flaticon.com/authors/monkik"></div>
 						<div class="icon_box_title"><h2>Luxury Rooms</h2></div>
 						<div class="icon_box_text">
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.</p>
+							<p>Beautiful room with large marble bathroom, air conditioning, an additional work area with free internet access and a walk-in closet.</p>
 						</div>
 					</div>
 				</div>
@@ -217,9 +217,11 @@
 				<!-- About Content -->
 				<div class="col-lg-6">
 					<div class="about_content">
-						<div class="about_title"><h2>The River / 10 years of excellence</h2></div>
+						<div class="about_title"><h2>The River / 5 years of excellence</h2></div>
 						<div class="about_text">
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit.</p>
+							<p>The River Hotel is located in the center of Ho Chi Minh City, is a hotel with a system of more than 30 bedrooms with beautiful and luxurious interior design with full amenities and modern. The hotel has a restaurant serving buffet breakfast, luxurious and sophisticated space, and the friendly, attentive and professional service style of the staff will satisfy customers.
+								The River Hotel always wants to be a reliable address when you come to rest or work in Ho Chi Minh City.
+								We are pleased to welcome and serve you.</p>
 						</div>
 					</div>
 				</div>
@@ -245,7 +247,7 @@
 				<div class="col">
 					<div class="booking_title text-center"><h2>/. Book a room ./</h2></div>
 					<div class="booking_text text-center">
-						<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit.</p>
+						<p>Choose a room bellow that suits your needs.</p>
 					</div>
 
 					<!-- Booking Slider -->
@@ -254,26 +256,26 @@
 							
 							<!-- Slide -->
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_1.jpg)"></div>
+								<div class="background_image" style="background-image:url(images/booking_3.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
-								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="#">Family Room</a></div>
+								<div class="booking_price">$70/Night</div>
+								<div class="booking_link"><a href="#">Single Room</a></div>
 							</div>
 
 							<!-- Slide -->
-							<div class="booking_item">
+							<!-- <div class="booking_item">
 								<div class="background_image" style="background-image:url(images/booking_2.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_price">$120/Night</div>
 								<div class="booking_link"><a href="#">Deluxe Room</a></div>
-							</div>
+							</div> -->
 
 							<!-- Slide -->
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_3.jpg)"></div>
+								<div class="background_image" style="background-image:url(images/booking_1.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="#">Single Room</a></div>
+								<div class="booking_link"><a href="#">Double Room</a></div>
 							</div>
 
 						</div>

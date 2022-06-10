@@ -65,28 +65,28 @@
 							
 							<!-- Slide -->
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_1.jpg)"></div>
+								<div class="background_image" style="background-image:url(images/booking_3.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_item_content">
 									<div class="booking_item_list">
 										<ul>
 											<li>27 m² Patio</li>
+											<li>Single bed</li>
 											<li>Balcony with view</li>
 											<li>Garden / Mountain view</li>
 											<li>Flat-screen TV</li>
 											<li>Air conditioning</li>
 											<li>Soundproofing</li>
-											<li>Private bathroom</li>
 											<li>Free WiFi</li>
 										</ul>
 									</div>
 								</div>
-								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Double</a></div>
+								<div class="booking_price">$70/Night</div>
+								<div class="booking_link"><a href="booking.html">Single Room</a></div>
 							</div>
 
 							<!-- Slide -->
-							<div class="booking_item">
+							<!-- <div class="booking_item">
 								<div class="background_image" style="background-image:url(images/booking_2.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_item_content">
@@ -105,28 +105,28 @@
 								</div>
 								<div class="booking_price">$120/Night</div>
 								<div class="booking_link"><a href="booking.html">Deluxe Room</a></div>
-							</div>
+							</div> -->
 
 							<!-- Slide -->
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_3.jpg)"></div>
+								<div class="background_image" style="background-image:url(images/booking_1.jpg)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_item_content">
 									<div class="booking_item_list">
 										<ul>
-											<li>27 m² Patio</li>
+											<li>32 m² Patio</li>
+											<li>Double bed</li>
 											<li>Balcony with view</li>
 											<li>Garden / Mountain view</li>
 											<li>Flat-screen TV</li>
 											<li>Air conditioning</li>
 											<li>Soundproofing</li>
-											<li>Private bathroom</li>
 											<li>Free WiFi</li>
 										</ul>
 									</div>
 								</div>
 								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Single Room</a></div>
+								<div class="booking_link"><a href="booking.html">Double Room</a></div>
 							</div>
 
 						</div>
@@ -143,14 +143,14 @@
 			<div class="row">
 				
 				<!-- Details Image -->
-				<div class="col-xl-7 col-lg-6">
+				<!-- <div class="col-xl-7 col-lg-6">
 					<div class="details_image">
 						<div class="background_image" style="background-image:url(images/details_1.jpg)"></div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- Details Content -->
-				<div class="col-xl-5 col-lg-6">
+				<!-- <div class="col-xl-5 col-lg-6">
 					<div class="details_content">
 						<div class="details_title">Family Room</div>
 						<div class="details_list">
@@ -199,7 +199,7 @@
 						</div>
 						<div class="book_now_button"><a href="#">Book Now</a></div>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 		</div>
@@ -218,12 +218,12 @@
 						<div class="details_list">
 							<ul>
 								<li>27 m² Patio</li>
+								<li>Single bed</li>
 								<li>Balcony with view</li>
 								<li>Garden / Mountain view</li>
 								<li>Flat-screen TV</li>
 								<li>Air conditioning</li>
 								<li>Soundproofing</li>
-								<li>Private bathroom</li>
 								<li>Free WiFi</li>
 							</ul>
 						</div>
@@ -282,16 +282,16 @@
 			<div class="row">
 				<div class="col-xl-6 offset-xl-6 col-lg-8 offset-lg-2">
 					<div class="special_content">
-						<div class="details_title">Special Offer - Deluxe Room</div>
+						<div class="details_title">Double Room</div>
 						<div class="details_list">
 							<ul>
-								<li>27 m² Patio</li>
+								<li>32 m² Patio</li>
+								<li>Double bed</li>
 								<li>Balcony with view</li>
 								<li>Garden / Mountain view</li>
 								<li>Flat-screen TV</li>
 								<li>Air conditioning</li>
 								<li>Soundproofing</li>
-								<li>Private bathroom</li>
 								<li>Free WiFi</li>
 							</ul>
 						</div>

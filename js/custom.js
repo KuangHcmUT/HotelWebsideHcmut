@@ -293,7 +293,7 @@ $(document).ready(function()
 			var bookingSlider = $('.booking_slider');
 			bookingSlider.owlCarousel(
 			{
-				items:3,
+				items:2,
 				autoplay:true,
 				autoplayHoverPause:true,
 				loop:true,
@@ -305,7 +305,7 @@ $(document).ready(function()
 				{
 					0:{items:1},
 					768:{items:2},
-					992:{items:3}
+					// 992:{items:3}
 				}
 			});
 		}
