@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 27, 2022 lúc 06:14 AM
+-- Thời gian đã tạo: Th6 11, 2022 lúc 04:29 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -30,19 +30,30 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `booking_id` int(8) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
-  `customer_idCard` int(12) NOT NULL,
-  `customer_phone` int(11) NOT NULL,
+  `customer_idCard` varchar(12) NOT NULL,
+  `customer_phone` varchar(11) NOT NULL,
   `customer_mail` varchar(50) DEFAULT NULL,
   `numRoom1` int(2) NOT NULL DEFAULT 0,
   `numRoom2` int(2) NOT NULL DEFAULT 0,
   `booking_date` date NOT NULL DEFAULT current_timestamp(),
   `checkin_date` date NOT NULL,
   `checkout_date` date NOT NULL,
-  `total_price` int(12) NOT NULL,
+  `total_price` varchar(12) NOT NULL,
   `note` varchar(200) DEFAULT NULL,
   `status` varchar(50) NOT NULL DEFAULT 'booking',
   `employee` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `customer_name`, `customer_idCard`, `customer_phone`, `customer_mail`, `numRoom1`, `numRoom2`, `booking_date`, `checkin_date`, `checkout_date`, `total_price`, `note`, `status`, `employee`) VALUES
+(1, 'Nguyễn Văn Quang', '1914802', '0965724322', NULL, 1, 0, '2022-06-11', '0000-00-00', '0000-00-00', '0', NULL, 'booking', NULL),
+(2, 'THiện', '222444', '0123647899', NULL, 1, 0, '2022-06-11', '0000-00-00', '0000-00-00', '0', NULL, 'booking', NULL),
+(3, 'thông', '2242466', '0124647899', NULL, 1, 0, '2022-06-11', '0000-00-00', '0000-00-00', '0', NULL, 'booking', NULL),
+(4, 'khoa', '2242466', '0124647899', NULL, 1, 2, '2022-06-11', '0000-00-00', '0000-00-00', '0', NULL, 'booking', NULL),
+(5, 'khoa', '2242466', '0124647899', NULL, 1, 2, '2022-06-11', '2022-06-11', '2022-06-15', '0', NULL, 'booking', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,13 +64,21 @@ CREATE TABLE `booking` (
 CREATE TABLE `confirmbooking` (
   `id` int(11) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
-  `customer_idCard` int(12) NOT NULL,
-  `customer_phone` int(11) NOT NULL,
+  `customer_idCard` varchar(12) NOT NULL,
+  `customer_phone` varchar(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkout_date` date NOT NULL,
   `room_number` int(3) NOT NULL,
-  `satus` varchar(200) NOT NULL
+  `satus` varchar(50) NOT NULL DEFAULT 'Confirm'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `confirmbooking`
+--
+
+INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `customer_phone`, `checkin_date`, `checkout_date`, `room_number`, `satus`) VALUES
+(1, 'Nguyễn Văn Quang', '1914802', '0965724322', '2022-06-11', '2022-06-15', 202, 'Confirm'),
+(2, 'Nguyễn Huang', '1914802', '0965724322', '2022-06-11', '2022-06-15', 101, 'Confirm');
 
 -- --------------------------------------------------------
 
@@ -70,8 +89,34 @@ CREATE TABLE `confirmbooking` (
 CREATE TABLE `room` (
   `room_id` int(3) NOT NULL,
   `room_type` varchar(10) NOT NULL,
-  `status` varchar(50) NOT NULL
+  `status` varchar(50) NOT NULL DEFAULT 'Trống'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `room`
+--
+
+INSERT INTO `room` (`room_id`, `room_type`, `status`) VALUES
+(101, '1', 'Trống'),
+(102, '1', 'Trống'),
+(103, '1', 'Trống'),
+(104, '2', 'Trống'),
+(105, '2', 'Trống'),
+(201, '1', 'Trống'),
+(202, '1', 'Trống'),
+(203, '1', 'Trống'),
+(204, '2', 'Trống'),
+(205, '2', 'Trống'),
+(301, '1', 'Trống'),
+(302, '1', 'Trống'),
+(303, '1', 'Trống'),
+(304, '2', 'Trống'),
+(305, '2', 'Trống'),
+(401, '1', 'Trống'),
+(402, '1', 'Trống'),
+(403, '1', 'Trống'),
+(404, '2', 'Trống'),
+(405, '2', 'Trống');
 
 -- --------------------------------------------------------
 
@@ -83,15 +128,17 @@ CREATE TABLE `users` (
   `ID` int(8) NOT NULL,
   `userName` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `fullName` varchar(100) NOT NULL
+  `fullName` varchar(100) NOT NULL,
+  `role` varchar(10) NOT NULL DEFAULT 'employee'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`) VALUES
-(1, 'haha', '123', 'Kang Dai Ka');
+INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `role`) VALUES
+(1, 'haha', '123', 'Kang Dai Ka', 'employee'),
+(2, 'admin', 'admin', 'admin', 'admin');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -130,19 +177,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

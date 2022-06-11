@@ -49,7 +49,7 @@
           <div class="d-flex justify-content-around align-items-center mb-4">
             <!-- Checkbox -->
             
-            <a href="#!">Forgot password?</a>
+            <a href="#!">Đổi Mật Khẩu</a>
           </div>
 
           <!-- Submit button -->

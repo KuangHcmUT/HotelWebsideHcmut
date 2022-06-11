@@ -7,8 +7,8 @@
 				<nav class="main_nav">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
 						<li class="active"><a href="../index.php">Home</a></li>
-						<li><a href="#bookingList">BookingList</a></li>
-						<li><a href="#confirmBooking">ConfirmBooking</a></li>
+						<li ><a id="booking" onclick="booking()" href="employee.php#bookingList">BookingList</a></li>
+						<li ><a id="confirm" onclick="confirm()" href="employee.php#bookingList">ConfirmBooking</a></li>
 					</ul>
 				</nav>
 				<div class="book_button"><a href="#">Log Out</a></div>

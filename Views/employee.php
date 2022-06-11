@@ -170,6 +170,16 @@
 <?php include '../Views/footer2.php'; ?>
 
 </body>
+<script>
+    function confirm(){
+        $('#confirmBooking').show();
+        $('#bookingList').hide();
+    }
+    function booking(){
+        $('#confirmBooking').hide();
+        $('#bookingList').show();
+    }
+</script>
 
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../styles/bootstrap-4.1.2/popper.js"></script>
