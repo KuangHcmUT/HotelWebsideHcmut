@@ -36,14 +36,14 @@
         <form>
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form1Example13" class="form-control form-control-lg" />
             <label class="form-label" for="form1Example13">User name</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg" />
             <label class="form-label" for="form1Example23">Password</label>
+            <input type="password" id="form1Example23" class="form-control form-control-lg" />
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
