@@ -86,18 +86,24 @@ INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `custome
 -- Cấu trúc bảng cho bảng `reviews`
 --
 
-CREATE TABLE `reviews` (
-  `ID` int(8) NOT NULL,
-  `fullName` varchar(50) NOT NULL,
-  `review` varchar(300) NOT NULL
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(50) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `imageSrc` varchar(50) NOT NULL,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `reviews`
+-- Đang đổ dữ liệu cho bảng `feedback`
 --
 
-INSERT INTO `reviews` (`ID`, `fullName`, `review`) VALUES
-(1, 'Kang', 'Chất lượng tốt');
+INSERT INTO `feedback` (`id`, `userName`, `content`, `rating`, `imageSrc`) VALUES
+(1, 'Scott', 'We loved it !!!', '5', 'male2.png'),
+(2, 'Lana', 'Nice place', '5', 'female3.png'),
+(3, 'Dustin', 'Fantastic experience', '5', 'male1.png');
+
 
 -- --------------------------------------------------------
 
@@ -176,11 +182,6 @@ ALTER TABLE `booking`
 ALTER TABLE `confirmbooking`
   ADD PRIMARY KEY (`id`);
 
---
--- Chỉ mục cho bảng `reviews`
---
-ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `room`
@@ -211,11 +212,6 @@ ALTER TABLE `booking`
 ALTER TABLE `confirmbooking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT cho bảng `reviews`
---
-ALTER TABLE `reviews`
-  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

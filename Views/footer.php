@@ -1,6 +1,6 @@
 <!-- Footer -->
 
-<footer class="footer" style="padding-top: 40px;">
+<footer class="footer" style="margin-top: 200px;" id="contact">
 	<div class="footer_content">
 		<div class="container">
 			<div class="row">

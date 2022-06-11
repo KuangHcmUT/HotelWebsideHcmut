@@ -9,8 +9,8 @@
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="room.php">Rooms</a></li>
 						<li><a href="#">Booking</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="index.php#review">Review</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
 				<div class="book_button"><a href="#">Book Online</a></div>
@@ -23,4 +23,12 @@
 				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			</div>
 		</div>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+		</style>
 	</header>
+
+
+	
