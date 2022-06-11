@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 11, 2022 lúc 04:29 AM
+-- Thời gian đã tạo: Th6 11, 2022 lúc 02:59 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -83,6 +83,25 @@ INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `custome
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `ID` int(8) NOT NULL,
+  `fullName` varchar(50) NOT NULL,
+  `review` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `reviews`
+--
+
+INSERT INTO `reviews` (`ID`, `fullName`, `review`) VALUES
+(1, 'Kang', 'Chất lượng tốt');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `room`
 --
 
@@ -129,6 +148,7 @@ CREATE TABLE `users` (
   `userName` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `fullName` varchar(100) NOT NULL,
+  `PhoneNum` varchar(11) NOT NULL,
   `role` varchar(10) NOT NULL DEFAULT 'employee'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -136,9 +156,9 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `role`) VALUES
-(1, 'haha', '123', 'Kang Dai Ka', 'employee'),
-(2, 'admin', 'admin', 'admin', 'admin');
+INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `PhoneNum`, `role`) VALUES
+(1, 'haha', '123', 'Kang Dai Ka', '0965724322', 'employee'),
+(2, 'admin', 'admin', 'admin', '0965724322', 'admin');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -155,6 +175,12 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `confirmbooking`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `room`
@@ -184,6 +210,12 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `confirmbooking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
