@@ -48,8 +48,8 @@
 
           <div class="d-flex justify-content-around align-items-center mb-4">
             <!-- Checkbox -->
-            
-            <a href="#!">Đổi Mật Khẩu</a>
+            <a style="text-align: left;" href="#!">Forgot password</a>
+            <a style="text-align: right;" href="#!">Register</a>
           </div>
 
           <!-- Submit button -->
