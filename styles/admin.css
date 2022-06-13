@@ -1,0 +1,129 @@
+th,
+td {
+    color: #000;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.change-index {
+    position: relative;
+}
+
+.form-inline {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.form-inline i {
+    position: absolute;
+}
+
+.form-inline input {
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.icon {
+    font-size: 1rem;
+    bottom: 19px;
+    left: 10px;
+}
+
+.add_button {
+    display: block;
+    width: 152px;
+    height: 54px;
+    background: #ffa37b;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: none;
+    line-height: 54px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.add_button:hover {
+    background: rgba(150, 117, 117, 0.3);
+    color: #ffa37b;
+    cursor: pointer;
+}
+
+.add-model.open {
+    display: flex;
+}
+
+.add-model {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    display: none;
+    /* justify-content: center; */
+}
+
+.add-model .container {
+    width: 60%;
+    color: #000000;
+    padding: 1.2rem;
+    background: #ffffff;
+    position: relative;
+    animation: openModal ease 0.6s;
+    z-index: 9999;
+}
+
+.addmodel-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+}
+
+.addmodel-close:hover {
+    background-color: #ffa37b;
+}
+
+.add-model .container h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.container.edit-contain {
+    color: #000000;
+    width: 60%;
+}
+
+.container.edit-contain h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+label {
+    font-weight: 700;
+}
+
+@keyframes openModal {
+    from {
+        opacity: 0;
+        transform: translateY(-5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
