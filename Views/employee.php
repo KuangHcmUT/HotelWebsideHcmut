@@ -19,24 +19,30 @@
         }
 
         // header('Location: ../View/employee.php');
-        // header("Refresh:0");
+        header("Refresh:0");
     }
 
-    // if(isset($_POST['demis'])){
-    //     $booking->demisBooking($_POST['booking_id'],1);
+    if(isset($_POST['demis'])){
+        $res = $booking->demisBooking($_POST['booking_id'],1);
 
-    //     // header('Location: ../View/employee.php');
-    //     // header("Refresh:0");
-    // }
+        if ($res) {
+            echo "1";
+        } else {
+            echo "Error";
+        }
+
+        // header('Location: ../View/employee.php');
+        header("Refresh:0");
+    }
     // if(isset($_POST['confirm'])){
     //     $booking->confirmBooking($_POST['booking_id']);
     //     header('Location: ../View/employee.php');
     // }
-    if(isset($_POST['check_in'])){
+    if(isset($_POST['checkin'])){
         $res =  $booking->check_in($_POST['confirm_id']);
         if($res){
 
-            // header('Location: ../View/employee.php');
+            // header('Location: employee.php#confirmBooking');
             header("Refresh:0");
         }
         else{
@@ -44,11 +50,11 @@
         }
     }
 
-    if(isset($_POST['check_out'])){
+    if(isset($_POST['checkout'])){
         $res = $booking->check_out($_POST['confirm_id']);
         if($res){
 
-            // header('Location: ../View/employee.php');
+            // header('Location: employee.php#confirmBooking');
             header("Refresh:0");
         }
         else{

@@ -44,7 +44,7 @@
 
         public function demisBooking($booking, $eID){
             $this->open_db();
-            $sql = "UPDATE booking SET status = Demised, employee = '$eID' WHERE booking_id = '$booking'";
+            $sql = "UPDATE booking SET status = 'Demised', employee = '$eID' WHERE booking_id = '$booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;

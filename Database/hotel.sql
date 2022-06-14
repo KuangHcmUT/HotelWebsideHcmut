@@ -69,7 +69,7 @@ CREATE TABLE `confirmbooking` (
   `checkin_date` date NOT NULL,
   `checkout_date` date NOT NULL,
   `room_number` int(3) NOT NULL,
-  `satus` varchar(50) NOT NULL DEFAULT 'Confirm'
+  `status` varchar(50) NOT NULL DEFAULT 'Confirm'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
