@@ -1,5 +1,61 @@
 <?php
-    // require_once '../Controller/hotelController.php'
+    require '../Model/bookingModel.php';
+    require '../Database/config.php';
+
+    session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
+    $objConfig = new config();
+    $booking = new bookingModel($objConfig);
+    $bookingList = $booking->getAllBooking();
+    $bookingList = $bookingList->fetch_all(MYSQLI_ASSOC);
+    $confirmList = $booking->getAllConfirm();
+    $confirmList = $confirmList->fetch_all(MYSQLI_ASSOC);
+    // $employee = $_SESSION['employee'];
+    // if(isset($_POST['accept'])){
+    //     $res =  $booking->acceptBooking($_POST['booking_id'],1);
+    //     if ($res) {
+    //         echo "1";
+    //     } else {
+    //         echo "Error";
+    //     }
+
+    //     // header('Location: ../View/employee.php');
+    //     // header("Refresh:0");
+    // }
+
+    // if(isset($_POST['demis'])){
+    //     $booking->demisBooking($_POST['booking_id'],1);
+
+    //     // header('Location: ../View/employee.php');
+    //     // header("Refresh:0");
+    // }
+    // if(isset($_POST['confirm'])){
+    //     $booking->confirmBooking($_POST['booking_id']);
+    //     header('Location: ../View/employee.php');
+    // }
+    if(isset($_POST['check_in'])){
+        $res =  $booking->check_in($_POST['confirm_id']);
+        if($res){
+
+            // header('Location: ../View/employee.php');
+            header("Refresh:0");
+        }
+        else{
+            echo "Error";
+        }
+    }
+
+    if(isset($_POST['check_out'])){
+        $res = $booking->check_out($_POST['confirm_id']);
+        if($res){
+
+            // header('Location: ../View/employee.php');
+            header("Refresh:0");
+        }
+        else{
+            echo "Error";
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,137 +89,91 @@
     <div class="container employee-con" style="margin-top: 100px;">
         <div id="bookingList" >
             <div class="title text-center mb-1">Danh sách đặt phòng</div>
-            <div class="row table-title">
-                <div class="col-md-2 text-center">Tên Khách Hàng</div>
-                <div class="col-md-1 text-center">Số Điện Thoại</div>
-                <div class="col-md-1 text-center">Ngày Đặt</div>
-                <div class="col-md-1 text-center">Ngày Nhận</div>
-                <div class="col-md-1 text-center">Ngày Trả</div>
-                <div class="col-md-1 text-center">Đơn/Đôi</div>
-                <div class="col-md-1 text-center">Trạng Thái</div>
-                <div class="col-md-2 text-center">Ghi chú</div>
-                <div class="col-md-2 text-center">Hành Động</div>
+            <div class="form-inline">
+                <i class="fa fa-search icon"> </i>
+                <input type="text" class="form-control mb-2 mr-sm-2" name="search-phone" id="search-phone" onkeyup="show_search_result()" placeholder="Search for phone">   
             </div>
-            <div class="row table-records">
-                <div class="col-md-2 text-center">Ngô Bá Khá</div>
-                <div class="col-md-1 text-center">0965724322</div>
-                <div class="col-md-1 text-center">21/01/2022</div>
-                <div class="col-md-1 text-center">24/01/2022</div>
-                <div class="col-md-1 text-center">30/01/2022</div>
-                <div class="col-md-1 text-center">2/1</div>
-                <div class="col-md-1 text-center">Booking</div>
-                <div class="col-md-2 text-center">Không</div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-primary accept">Accept</button>
-                    <button class="btn btn-danger demis">Demis</button>
-                </div>
-            </div>
-            <div class="row table-records">
-                <div class="col-md-2 text-center">Ngô Bá Khá</div>
-                <div class="col-md-1 text-center">0965724322</div>
-                <div class="col-md-1 text-center">21/01/2022</div>
-                <div class="col-md-1 text-center">24/01/2022</div>
-                <div class="col-md-1 text-center">30/01/2022</div>
-                <div class="col-md-1 text-center">2/1</div>
-                <div class="col-md-1 text-center">Booking</div>
-                <div class="col-md-2 text-center">Không</div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-primary accept">Accept</button>
-                    <button class="btn btn-danger demis">Demis</button>
-                </div>
-            </div>
-            <div class="row table-records">
-                <div class="col-md-2 text-center">Ngô Bá Khá</div>
-                <div class="col-md-1 text-center">0965724322</div>
-                <div class="col-md-1 text-center">21/01/2022</div>
-                <div class="col-md-1 text-center">24/01/2022</div>
-                <div class="col-md-1 text-center">30/01/2022</div>
-                <div class="col-md-1 text-center">2/1</div>
-                <div class="col-md-1 text-center">Booking</div>
-                <div class="col-md-2 text-center">Không</div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-primary accept">Accept</button>
-                    <button class="btn btn-danger demis">Demis</button>
-                </div>
-            </div>
-            <div class="row table-records">
-                <div class="col-md-2 text-center">Ngô Bá Khá</div>
-                <div class="col-md-1 text-center">0965724322</div>
-                <div class="col-md-1 text-center">21/01/2022</div>
-                <div class="col-md-1 text-center">24/01/2022</div>
-                <div class="col-md-1 text-center">30/01/2022</div>
-                <div class="col-md-1 text-center">2/1</div>
-                <div class="col-md-1 text-center">Booking</div>
-                <div class="col-md-2 text-center">Không</div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-primary accept">Accept</button>
-                    <button class="btn btn-danger demis">Demis</button>
-                </div>
-            </div>
-            <div class="row table-records">
-                <div class="col-md-2 text-center">Ngô Bá Khá</div>
-                <div class="col-md-1 text-center">0965724322</div>
-                <div class="col-md-1 text-center">21/01/2022</div>
-                <div class="col-md-1 text-center">24/01/2022</div>
-                <div class="col-md-1 text-center">30/01/2022</div>
-                <div class="col-md-1 text-center">2/1</div>
-                <div class="col-md-1 text-center">Booking</div>
-                <div class="col-md-2 text-center">Không</div>
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-primary accept">Accept</button>
-                    <button class="btn btn-danger demis">Demis</button>
-                </div>
-            </div>
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th>Tên Khách Hàng</th>
-                        <th>Ngày Đặt</th>
-                        <th>Ngày Nhận</th>
-                        <th>Ngày Trả</th>
-                        <th>Số Điện Thoại</th>
-                        <th>Số Phòng đơn</th>
-                        <th>Số Phòng đôi</th>
-                        <th>Trạng Thái</th>
-                        <th>Hành Động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($bookingList as $booking) ?>
-                    <tr>
-                        <td><?php echo $booking['booking_id']; ?></td>
-                        <td><?php echo $booking['customer_name']; ?></td>
-                        <td><?php echo $booking['booking_date']; ?></td>
-                        <td><?php echo $booking['checkin_date']; ?></td>
-                        <td><?php echo $booking['checkout_date']; ?></td>
-                        <td><?php echo $booking['customer_phone']; ?></td>
-                        <td><?php echo $booking['room_number']; ?></td>
-                        <td><?php echo $booking['total_price']; ?></td>
-                        <td><?php echo $booking['status']; ?></td>
-                        <td>
-                            <a href="../Controllers/booking.php?action=edit&booking_id=<?php echo $booking['booking_id']; ?>">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </a>
-                            <a href="../Controllers/booking.php?action=delete&booking_id=<?php echo $booking['booking_id']; ?>">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </a>
-                        </td>
-                    </tr>
-            </table> -->
+            <table class="table table-hover" id="main-table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Customer Name</th>
+                <th>PhoneNum</th>
+                <th>Bookingdate</th>
+                <th>Checkin</th>
+                <th>Checkout</th>
+                <th>R1/R2</th>
+                <th>Status</th>
+                <th>Note</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($bookingList as $booking) { ?>
+                <tr>
+                    <td><?php echo $booking['customer_name']; ?></td>
+                    <td><?php echo $booking['customer_phone']; ?></td>
+                    <td><?php echo $booking['booking_date']; ?></td>
+                    <td><?php echo $booking['checkin_date']; ?></td>
+                    <td><?php echo $booking['checkout_date']; ?></td>
+                    <td><?php echo $booking['numRoom1'] . ' / ' . $booking['numRoom2']; ?></td>
+                    <td><?php echo $booking['status']; ?></td>
+                    <td><?php echo $booking['note']; ?></td>
+                    <td>
+                        <form action="#" method="$_POST">
+                            <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
+                            <button name="accept" type="submit" class="btn btn-primary accept" data-id="<?php echo $booking['booking_id']; ?>">Accept</button>
+                            <button name="demis"  type="submit" class="btn btn-danger demis" data-id="<?php echo $booking['booking_id']; ?>">Demis</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+            </table>
+
         </div>
         <div id="confirmBooking" style="display: none;">
             <div class="title text-center mb-1">Danh sách xếp phòng</div>
-            <div class="row table-title">
-                <div class="col-md-2 text-center">Tên Khách Hàng</div>
-                <div class="col-md-1 text-center">CMND / CCDC</div>
-                <div class="col-md-1 text-center">Số Điện Thoại</div>
-                <div class="col-md-1 text-center">Ngày Nhận</div>
-                <div class="col-md-1 text-center">Ngày Trả</div>
-                <div class="col-md-1 text-center">Số phòng</div>
-                <div class="col-md-1 text-center">Trạng Thái</div>
-                <div class="col-md-2 text-center">Ghi chú</div>
-                <div class="col-md-2 text-center">Hành Động</div>
+
+            <div class="form-inline">
+                <i class="fa fa-search icon"> </i>
+                <input type="text" class="form-control mb-2 mr-sm-2" name="search-phone" id="search-phone" onkeyup="show_search_result()" placeholder="Search for phone">   
             </div>
+            <table class="table table-hover" id="main-table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Customer Name</th>
+                <th>PhoneNum</th>
+                <th>Cus_idCard</th>
+                <th>Checkin</th>
+                <th>Checkout</th>
+                <th>RoomNum</th>
+                <th>Status</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($confirmList as $confirm) { ?>
+                <tr>
+                    <td><?php echo $confirm['customer_name']; ?></td>
+                    <td><?php echo $confirm['customer_phone']; ?></td>
+                    <td><?php echo $confirm['customer_idCard']; ?></td>
+                    <td><?php echo $confirm['checkin_date']; ?></td>
+                    <td><?php echo $confirm['checkout_date']; ?></td>
+                    <td><?php echo $confirm['room_number']; ?></td>
+                    <td><?php echo $confirm['status']; ?></td>
+                    <td>
+                        <form action="#" method="$_POST">
+                            <input type="hidden" name="confirm_id" value="<?php echo $confirm['id']; ?>">
+                            <button name="checkin"  type="submit" class="btn btn-primary checkin" data-id="<?php echo $confirm['id']; ?>">CheckIn</button>
+                            <button name="checkout" type="submit" class="btn btn-danger checkout" data-id="<?php echo $confirm['id']; ?>">CheckOut</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+            </table>
         </div>
     </div>
 
@@ -179,6 +189,24 @@
         $('#confirmBooking').hide();
         $('#bookingList').show();
     }
+    function show_search_result() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search-phone");
+    filter = input.value;
+    table = document.getElementById("main-table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
 </script>
 
 <script src="../js/jquery-3.3.1.min.js"></script>

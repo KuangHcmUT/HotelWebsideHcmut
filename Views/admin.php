@@ -92,7 +92,7 @@
                 <td><?php echo $res['checkin_date']; ?></td>
                 <td><?php echo $res['checkout_date']; ?></td>
                 <td><?php echo $res['room_number']; ?></td>
-                <td><?php echo $res['satus']; ?></td>
+                <td><?php echo $res['status']; ?></td>
             </tr>
             <?php } ?>
             </tbody>
