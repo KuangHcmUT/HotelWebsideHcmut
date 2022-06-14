@@ -10,17 +10,17 @@
     $confirmList = $booking->getAllConfirm();
     $confirmList = $confirmList->fetch_all(MYSQLI_ASSOC);
     // $employee = $_SESSION['employee'];
-    // if(isset($_POST['accept'])){
-    //     $res =  $booking->acceptBooking($_POST['booking_id'],1);
-    //     if ($res) {
-    //         echo "1";
-    //     } else {
-    //         echo "Error";
-    //     }
+    if(isset($_POST['accept'])){
+        $res =  $booking->acceptBooking($_POST['booking_id'],1);
+        if ($res) {
+            echo "1";
+        } else {
+            echo "Error";
+        }
 
-    //     // header('Location: ../View/employee.php');
-    //     // header("Refresh:0");
-    // }
+        // header('Location: ../View/employee.php');
+        // header("Refresh:0");
+    }
 
     // if(isset($_POST['demis'])){
     //     $booking->demisBooking($_POST['booking_id'],1);
@@ -119,7 +119,7 @@
                     <td><?php echo $booking['status']; ?></td>
                     <td><?php echo $booking['note']; ?></td>
                     <td>
-                        <form action="#" method="$_POST">
+                        <form action="#" method="POST">
                             <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
                             <button name="accept" type="submit" class="btn btn-primary accept" data-id="<?php echo $booking['booking_id']; ?>">Accept</button>
                             <button name="demis"  type="submit" class="btn btn-danger demis" data-id="<?php echo $booking['booking_id']; ?>">Demis</button>
@@ -163,7 +163,7 @@
                     <td><?php echo $confirm['room_number']; ?></td>
                     <td><?php echo $confirm['status']; ?></td>
                     <td>
-                        <form action="#" method="$_POST">
+                        <form action="#" method="POST">
                             <input type="hidden" name="confirm_id" value="<?php echo $confirm['id']; ?>">
                             <button name="checkin"  type="submit" class="btn btn-primary checkin" data-id="<?php echo $confirm['id']; ?>">CheckIn</button>
                             <button name="checkout" type="submit" class="btn btn-danger checkout" data-id="<?php echo $confirm['id']; ?>">CheckOut</button>

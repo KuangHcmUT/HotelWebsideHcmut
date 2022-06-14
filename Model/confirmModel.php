@@ -26,13 +26,13 @@
             return $result;
         }
 
-        // public function acceptBooking($booking, $eID){
-        //     $this->open_db();
-        //     $sql = "UPDATE booking SET status = 'Accepted', employee = '$eID' WHERE bookingID = '$booking->bookingID'";
-        //     $result = $this->conn->query($sql);
-        //     $this->close_db();
-        //     return $result;
-        // }
+        public function acceptBooking($booking, $eID){
+            $this->open_db();
+            $sql = "UPDATE booking SET status = 'Accepted', employee = '$eID' WHERE bookingID = $booking->bookingID";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            return $result;
+        }
 
         // public function demisBooking($booking, $eID){
         //     $this->open_db();
