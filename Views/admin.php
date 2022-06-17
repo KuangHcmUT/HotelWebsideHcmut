@@ -4,15 +4,15 @@
     $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
     $res2 = mysqli_query($con, "SELECT * FROM users");
     
-    if (isset($_POST['btnadd'])) {
-        $username = $_POST['new_username'];
-        $fullname = $_POST['new_name'];
-        $pass = $_POST['new_password'];
-        $phone = $_POST['new_phone'];
-        $role = $_POST['new_role'];
-        addaccount($username, $fullname, $pass, $phone, $role);
-        header("Refresh:0");
-    }
+    // if (isset($_POST['btnadd'])) {
+    //     $username = $_POST['new_username'];
+    //     $fullname = $_POST['new_name'];
+    //     $pass = $_POST['new_password'];
+    //     $phone = $_POST['new_phone'];
+    //     $role = $_POST['new_role'];
+    //     addaccount($username, $fullname, $pass, $phone, $role);
+    //     header("Refresh:0");
+    // }
     
 ?>
 
@@ -39,7 +39,7 @@
 
 <div class="super_container">
 	
-    <?php include 'header.php';?>
+    <?php include 'header2.php';?>
 
 	<!-- Home -->
 

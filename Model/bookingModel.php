@@ -74,6 +74,14 @@
             return $result;
         }
 
+        public function updateStatus($room, $status){
+            $this->open_db();
+            $sql = "UPDATE room SET status = '$status' WHERE room_id = '$room'";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            return $result;
+        }
+
     }
 
 ?>

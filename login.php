@@ -1,3 +1,12 @@
+<?php
+    $_SESSION = array();
+    unset($_SESSION['userName']);
+    unset($_SESSION['role']);
+
+    require 'Controller/loginController.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,17 +42,17 @@
           class="img-fluid" alt="Phone image">
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-        <form>
+        <form action="#" method="POST">
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example13">User name</label>
-            <input type="text" id="form1Example13" class="form-control form-control-lg" />
+            <input name="userName" type="text" id="form1Example13" class="form-control form-control-lg" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example23">Password</label>
-            <input type="password" id="form1Example23" class="form-control form-control-lg" />
+            <input name="password" type="password" id="form1Example23" class="form-control form-control-lg" />
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
@@ -53,7 +62,7 @@
           </div>
 
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          <button name="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
         </form>
       </div>
     </div>
@@ -95,3 +104,5 @@
 <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/custom.js"></script>
 </html>
+<!--  -->
+

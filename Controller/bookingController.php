@@ -42,6 +42,7 @@
 
     if(isset($_POST['checkin'])){
         $res =  $booking->check_in($_POST['confirm_id']);
+        $res = $res && $booking->updateStatus($_POST['confirm_room'],'CheckedIn');
         if($res){
 
             // header('Location: employee.php#confirmBooking');
@@ -54,6 +55,8 @@
 
     if(isset($_POST['checkout'])){
         $res = $booking->check_out($_POST['confirm_id']);
+        $res = $res && $booking->updateStatus($_POST['confirm_room'],'Ready');
+
         if($res){
 
             // header('Location: employee.php#confirmBooking');
@@ -63,5 +66,13 @@
             echo "Error";
         }
     }
+    // if (isset($_POST['logoutBtn'])) {
+    //     session_destroy();
+    //     $currentUser = null;
+    //     unset($_SESSION['userName']);
+    //     unset($_SESSION['role']);
+    //     header('Location: ../login.php');
+    //     exit();
+    // }
 
 ?>
