@@ -32,7 +32,7 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 						<?php if ($_SESSION['role'] == 'admin') echo 
-						'<a class="dropdown-item" id="admin-manager" href="admin.php">Admin Manager</a>'
+						'<a class="dropdown-item" id="admin-manager" href="../Views/admin.php">Admin Manager</a>'
 						?>
 
 						<?php if ($_SESSION['role'] == 'employee') echo 
