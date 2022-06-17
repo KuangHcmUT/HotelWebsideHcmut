@@ -52,7 +52,7 @@
 
         public function confirmBooking($name, $id, $phone, $checkin, $checkout, $room){
             $this->open_db();
-            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ($name, $id, $phone, $checkin, $checkout, $room)";
+            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ('$name', '$id', '$phone', '$checkin', '$checkout', '$room')";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
