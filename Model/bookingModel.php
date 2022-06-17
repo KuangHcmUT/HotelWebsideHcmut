@@ -82,6 +82,17 @@
             return $result;
         }
 
+        public function getUser($userName){
+            $this->open_db();
+            $sql = "SELECT * FROM users WHERE userName = '$userName'";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            if($result->num_rows > 0) {
+                return $result->fetch_assoc();
+            }
+            return $result;
+        }
+
     }
 
 ?>

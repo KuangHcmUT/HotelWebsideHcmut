@@ -4,8 +4,8 @@
 require './Model/loginModel.php';
 require_once './Database/config.php';
 
-// session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
-session_start();
+session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
+// session_start();
 $objConfig = new config();
 $login = new loginModel($objConfig);
 $login->detectPage();
@@ -14,13 +14,12 @@ $currentUser = null;
 
 
 if(isset($_POST['loginBtn'])){
-    header('Location: Views/admin.php');
-    echo 'aaaaa';
     $userName = $_POST['userName'];
     $password = $_POST['password'];
     $user = $login->login($userName, $password);
     if($user){
         $_SESSION['userName'] = $user['userName'];
+        $_SESSION['phoneNum'] = $user['phoneNum'];
 
     }
     else{
@@ -29,15 +28,18 @@ if(isset($_POST['loginBtn'])){
     if (isset($_SESSION['userName'])) {
         $currentUser = $login->getUser($_SESSION['userName']);
         if ($currentUser['role'] == 'admin') {
+            $_SESSION['role'] = 'admin';
             header('Location: Views/admin.php');
             exit();
         }
         else if ($currentUser['role'] == 'employee') {
+            $_SESSION['role'] = 'employee';
             header('Location: Views/employee.php');
             exit();
         }
         else if ($currentUser['role'] == 'customer') {
-            header('Location: Views/customer.php');
+            $_SESSION['role'] = 'customer';
+            header('Location: index.php');
             exit();
         }
     }

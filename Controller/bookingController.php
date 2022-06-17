@@ -9,6 +9,7 @@
     $bookingList = $bookingList->fetch_all(MYSQLI_ASSOC);
     $confirmList = $booking->getAllConfirm();
     $confirmList = $confirmList->fetch_all(MYSQLI_ASSOC);
+    $user = $booking->getUser($_SESSION['userName']);
     // $employee = $_SESSION['employee'];
     if(isset($_POST['accept'])){
         $res =  $booking->acceptBooking($_POST['booking_id'],1);

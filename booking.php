@@ -89,7 +89,7 @@
     
                     <div id="content">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" id="input-group" placeholder="Your ID" name="ID" required="required">
+                        <input type="text" id="input-group" placeholder="Your ID Card" name="ID" required="required">
                     </div>
     
                    

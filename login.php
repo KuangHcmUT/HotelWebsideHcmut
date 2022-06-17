@@ -1,8 +1,4 @@
 <?php
-    $_SESSION = array();
-    unset($_SESSION['userName']);
-    unset($_SESSION['role']);
-
     require 'Controller/loginController.php';
 ?>
 
@@ -64,6 +60,11 @@
           <!-- Submit button -->
           <button name="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
         </form>
+        <?php if(!$check): ?>
+          <div class="alert alert-danger text-center">
+            <strong>Đăng nhập thất bại!</strong> Tên tài khoản hoặc mật khẩu không chính xác!
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>

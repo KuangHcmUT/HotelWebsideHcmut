@@ -5,6 +5,7 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
 	$currentUser = null;
 	unset($_SESSION['userName']);
 	unset($_SESSION['role']);
+	unset($_SESSION['phoneNum']);
 	header('Location: ../login.php');
 	exit();
 }

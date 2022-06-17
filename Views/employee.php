@@ -31,6 +31,8 @@
 <?php include '../Views/header2.php'; ?>
 
     <div class="container employee-con" style="margin-top: 100px;">
+    <?php include '../Views/info.php'; ?>
+
         <div id="bookingList" >
             <div class="title text-center mb-1">Danh sách đặt phòng</div>
             <div class="form-inline">
@@ -46,8 +48,8 @@
                 <th>Checkin</th>
                 <th>Checkout</th>
                 <th>R1/R2</th>
-                <th>Status</th>
                 <th>Note</th>
+                <th>Status</th>
                 <th>Active</th>
             </tr>
             </thead>
@@ -60,8 +62,8 @@
                     <td><?php echo $booking['checkin_date']; ?></td>
                     <td><?php echo $booking['checkout_date']; ?></td>
                     <td><?php echo $booking['numRoom1'] . ' / ' . $booking['numRoom2']; ?></td>
-                    <td><?php echo $booking['status']; ?></td>
                     <td><?php echo $booking['note']; ?></td>
+                    <td><?php echo $booking['status']; ?></td>
                     <td>
                         <form action="#" method="POST">
                             <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
