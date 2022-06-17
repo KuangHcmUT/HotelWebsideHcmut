@@ -65,11 +65,21 @@
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         <input type="date" class=" booking_input2 booking_input_a booking_in" placeholder="Check in" name="Checkin" required="required">
                     </div>
-    
+
                     <div id="content">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Single room" name="Singleroom"required="required">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Double room" name="Doubleroom"required="required">
+                    </div>
+    
+                    <!-- <div id="content">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <input type="text" id="input-group" placeholder="Phone number" name="Phone"required="required">
-                    </div>
+                    </div> -->
     
                    
     
@@ -89,13 +99,23 @@
                         <input type="date" class=" booking_input2 booking_input_a booking_out" placeholder="Check out" name="Checkout"required="required">
                     </div>
     
-                    <div id="content">
+                    <!-- <div id="content">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <select id="input-group" style="background-color: black;" name="Type" required="required">
                             <option value="">Room Type</option>
                             <option value="">Single Room</option>
                             <option value="">Double Room</option>
                         </select>
+                    </div> -->
+
+                    <!-- <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Single room" name="Singleroom"required="required">
+                    </div> -->
+
+                    <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="text" id="input-group" placeholder="Phone number" name="Phone"required="required">
                     </div>
                 
                 </div>
