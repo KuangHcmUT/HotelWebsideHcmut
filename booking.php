@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +32,7 @@
 <body>
 
 <div class="super_container">
-	<?php include 'Views/header.php';?>
+	<?php include 'Views/header2.php';?>
 
 
     <div class="home4">
