@@ -44,15 +44,15 @@
 
         public function demisBooking($booking, $eID){
             $this->open_db();
-            $sql = "UPDATE booking SET status = 'Demised', employee = '$eID' WHERE booking_id = '$booking'";
+            $sql = "UPDATE booking SET status = 'Rejected', employee = '$eID' WHERE booking_id = '$booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
         }
 
-        public function confirmBooking($booking){
+        public function confirmBooking($name, $id, $phone, $checkin, $checkout, $room){
             $this->open_db();
-            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ()";
+            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ($name, $id, $phone, $checkin, $checkout, $room)";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
