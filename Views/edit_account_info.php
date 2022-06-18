@@ -38,7 +38,7 @@
 <link rel="stylesheet" type="text/css" href="./styles/booking.css">
 <link rel="stylesheet" type="text/css" href="./styles/booking_responsive.css">
 <link rel="stylesheet" href="./styles/admin.css">
-<link rel="icon" type="image/x-icon" href="/images/webicon.png">
+<link rel="icon" type="image/x-icon" href="./images/webicon.png">
 </head>
 <body>
 
