@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Admin page</title>
+<title>Edit Account</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -43,18 +43,18 @@
 <body>
 
 <div class="super_container">
-	<?php include 'header.php' ?>
+	<?php include 'header2.php' ?>
 
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<div class="home_content text-center">
-							<div class="home_title">Welcome to The River!</div>
+							<div class="home_title">Account Setting</div>
 						</div>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
     </div>
     
     <div class="container edit-contain">
-            <header><h2>Edit account information</h2></header>
+            <header><h2>Edit Account Information</h2></header>
             <form method="POST">
                 <div class="form-group">
                     <label for="Id2">ID</label>
