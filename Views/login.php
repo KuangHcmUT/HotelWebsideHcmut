@@ -60,6 +60,7 @@
           <!-- Submit button -->
           <button name="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
         </form>
+        <br>
         <?php if(!$check): ?>
           <div class="alert alert-danger text-center">
             <strong>Đăng nhập thất bại!</strong> Tên tài khoản hoặc mật khẩu không chính xác!

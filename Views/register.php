@@ -1,10 +1,14 @@
+<?php
+    require '../Controller/signupController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
@@ -64,11 +68,25 @@
           <!-- Submit button -->
           <button name="signUpBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
         </form>
-        <!-- <?php if(!$check): ?>
+        <br>
+        <?php if(!$checks): ?>
           <div class="alert alert-danger text-center">
-            <strong>Đăng Ký thất bại!</strong> Tên tài khoản hoặc mật khẩu không chính xác!
+            <strong>Đăng ký thất bại!</strong> Tên tài khoản đã được sử dụng!
           </div>
-        <?php endif; ?> -->
+        <?php endif; ?>
+        
+        <?php if(!$confirmPass): ?>
+          <div class="alert alert-danger text-center">
+            <strong>Đăng ký thất bại!</strong> Vui lòng xác nhận đúng mật khẩu!
+          </div>
+        <?php endif; ?>
+          <br>
+        <?php if(!$phone): ?>
+          <div class="alert alert-danger text-center">
+            <strong>Đăng ký thất bại!</strong> Số điện thoại đã được sử dụng!
+          </div>
+        <?php endif; ?>
+
       </div>
     </div>
   </div>
