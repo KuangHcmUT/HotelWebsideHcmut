@@ -22,17 +22,32 @@
     <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.3.4/animate.css">
     <link href="../plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="../plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="../styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="../styles/booking.css">
+    <link rel="stylesheet" type="text/css" href="../styles/booking_responsive.css">
     <link rel="icon" type="image/x-icon" href="../images/webicon.png">
     <link rel ="stylesheet" href="../Libs/CSS/employee.css">
 </head>
 <body>
 <?php include '../Views/header2.php'; ?>
 
-    <div class="container employee-con" style="margin-top: 100px;">
-    <?php include '../Views/info.php'; ?>
+    <div class="home">
+		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title">Employee Manager</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
+
+
+    <div class="container employee-con" style="margin-top: 100px;">
         <div id="bookingList" >
             <div class="title text-center mb-1">Danh sách đặt phòng</div>
             <div class="form-inline">

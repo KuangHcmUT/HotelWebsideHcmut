@@ -1,3 +1,8 @@
+<?php
+	session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +25,7 @@
 
 <div class="super_container">
 	
-	<?php include 'Views/header.php'; ?>
+	<?php include 'Views/header2.php'; ?>
 
 	<!-- Home -->
 
@@ -31,7 +36,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content text-center">
-							<div class="home_title">Book A Room</div>
+							<div class="home_title">Room Infomation</div>
 						</div>
 					</div>
 				</div>

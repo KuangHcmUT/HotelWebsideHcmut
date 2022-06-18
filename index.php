@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -85,7 +87,7 @@
 <body>
 
 <div class="super_container">
-	<?php include 'Views/header.php';?>
+	<?php include 'Views/header2.php';?>
 
 	<!-- Home -->
 

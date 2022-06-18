@@ -50,7 +50,6 @@
     </div>
     
     <div class="container">
-    <?php include '../Views/info.php'; ?>
 
         <h2>/. Booking list ./</h2>
             <div class="form-inline">

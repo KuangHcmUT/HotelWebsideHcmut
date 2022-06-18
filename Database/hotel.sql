@@ -76,7 +76,7 @@ CREATE TABLE `confirmbooking` (
 -- Đang đổ dữ liệu cho bảng `confirmbooking`
 --
 
-INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `customer_phone`, `checkin_date`, `checkout_date`, `room_number`, `satus`) VALUES
+INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `customer_phone`, `checkin_date`, `checkout_date`, `room_number`, `status`) VALUES
 (1, 'Nguyễn Văn Quang', '1914802', '0965724322', '2022-06-11', '2022-06-15', 202, 'Confirm'),
 (2, 'Nguyễn Huang', '1914802', '0965724322', '2022-06-11', '2022-06-15', 101, 'Confirm');
 

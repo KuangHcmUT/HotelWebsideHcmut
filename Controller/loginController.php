@@ -19,8 +19,7 @@ if(isset($_POST['loginBtn'])){
     $user = $login->login($userName, $password);
     if($user){
         $_SESSION['userName'] = $user['userName'];
-        $_SESSION['phoneNum'] = $user['phoneNum'];
-
+        $_SESSION['PhoneNum'] = $user['PhoneNum'];
     }
     else{
         $check = false;
