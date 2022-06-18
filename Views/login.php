@@ -1,5 +1,5 @@
 <?php
-    require 'Controller/loginController.php';
+    require '../Controller/loginController.php';
 ?>
 
 
@@ -28,7 +28,7 @@
     <link rel="icon" type="image/x-icon" href="/images/webicon.png">
 </head>
 <body>
-	<?php include 'Views/header.php';?>
+	<?php include 'header2.php';?>
     
 <section class="vh-100 login" style="margin-top: 240px;">
   <div class="container py-5 h-100">
@@ -70,7 +70,7 @@
   </div>
 </section>
 
-<?php include 'Views/footer.php';?>
+<?php include 'footer.php';?>
 
 </body>
 

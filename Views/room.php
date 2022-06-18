@@ -25,7 +25,7 @@
 
 <div class="super_container">
 	
-	<?php include 'Views/header2.php'; ?>
+	<?php include 'header2.php'; ?>
 
 	<!-- Home -->
 
@@ -326,7 +326,7 @@
 		</div>
 	</div>
 
-	<?php include 'Views/footer.php'; ?>
+	<?php include 'footer.php'; ?>
 
 </div>
 
