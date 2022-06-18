@@ -62,7 +62,7 @@
                 <th>Bookingdate</th>
                 <th>Checkin</th>
                 <th>Checkout</th>
-                <th>R1/R2</th>
+                <th>Room Types</th>
                 <th>Total Price</th>
                 <th>Status</th>
                 <th>Active</th>
@@ -76,7 +76,7 @@
                     <td><?php echo $booking['booking_date']; ?></td>
                     <td><?php echo $booking['checkin_date']; ?></td>
                     <td><?php echo $booking['checkout_date']; ?></td>
-                    <td><?php echo $booking['numRoom1'] . ' / ' . $booking['numRoom2']; ?></td>
+                    <td><?php echo $booking['roomtype']; ?></td>
                     <td><?php echo $booking['total_price']; ?></td>
                     <td><?php echo $booking['status']; ?></td>
                     <td>
@@ -88,11 +88,49 @@
                             <input type="hidden" name="checkin_date" value="<?php echo $booking['checkin_date']; ?>">
                             <input type="hidden" name="checkout_date" value="<?php echo $booking['checkout_date']; ?>">
 
-                            <button name="accept" type="submit" class="btn btn-primary accept" data-id="<?php echo $booking['booking_id']; ?>">Accept</button>
+                            <!-- <button name="accept" type="submit" class="btn btn-primary accept" data-id="<?php echo $booking['booking_id']; ?>">Accept</button> -->
                             <button name="demis"  type="submit" class="btn btn-danger demis" data-id="<?php echo $booking['booking_id']; ?>">Reject </button>
                             <br>
-                            <input type="text" name="roomNum" placeholder="Input Room number">
-                            <button name="addConfirm"  type="submit" class="btn btn-danger addConfirm" data-id="<?php echo $booking['booking_id']; ?>">Confirm</button>
+                            <!-- <input type="text" name="roomNum" placeholder="Input Room number"> -->
+                            <label for="cars">Choose a room:</label>
+                            <select name="room-id" id="room-id">
+                                <?php
+                                // $emptyRoomList = getAllEmptyRoom($booking['roomtype']);
+                                $failed_room = [];
+
+                                foreach ($allRoomList as $room) { 
+                                    if($booking['roomtype'] == $room['room_type']) { 
+                                        foreach($confirmList as $list) {
+                                            if ($list['room_number'] == $room['room_id']) {
+                                                if($booking['checkin_date'] >= $list['checkin_date'] && $booking['checkin_date'] <= $list['checkout_date']){
+                                                    array_push($failed_room, $room['room_id']);
+                                                }
+                                                // else {
+                                                //     echo '<option value="'.$room['room_id'].'">'.$room['room_id'].'</option>';
+                                                // }
+                                            }
+                                            // else{
+                                            //     echo '<option value="'.$room['room_id'].'">'.$room['room_id'].'</option>';
+                                            // }
+                                        }
+                                    }
+                                }
+
+                                foreach ($allRoomList as $room) { 
+                                    if($booking['roomtype'] == $room['room_type']) { 
+                                        if(!in_array($room['room_id'], $failed_room)) {
+                                            echo '<option value="'.$room['room_id'].'">'.$room['room_id'].'</option>';
+                                        }
+                                    }
+                                }
+                                        
+                                
+                                ?>
+
+                            </select>
+
+
+                            <button name="addConfirm"  type="submit" class="btn btn-success addConfirm" data-id="<?php echo $booking['booking_id']; ?>">Confirm</button>
                         </form>
                         
                     </td>
@@ -123,7 +161,9 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($confirmList as $confirm) { ?>
+            <?php foreach ($confirmList as $confirm) {
+                if($confirm['status'] != 'Checked Out') {
+            ?>
                 <tr>
                     <td><?php echo $confirm['customer_name']; ?></td>
                     <td><?php echo $confirm['customer_phone']; ?></td>
@@ -143,7 +183,7 @@
                         
                     </td>
                 </tr>
-            <?php } ?>
+            <?php } } ?>
             </tbody>
             </table>
         </div>

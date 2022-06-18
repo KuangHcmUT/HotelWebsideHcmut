@@ -77,20 +77,20 @@
                         onblur="(this.type='text')" placeholder="Check in" name="Checkin" required="required"> 
                     </div>
 
-                    <div id="content">
+                    <!-- <div id="content">
                         <i class="fa fa-bed" aria-hidden="true"></i>
                         <input type="number" onchange="total_price()" id="room1" class="inputgroup" placeholder="Number of Single rooms" name="Singleroom"required="required">
-                    </div>
+                    </div> -->
 
                     <div id="content">
-                        <i class="fa fa-bed" aria-hidden="true"></i>
-                        <input type="number" onchange="total_price()" id="room2" class="inputgroup" placeholder="Number of Double rooms" name="Doubleroom"required="required">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <label for="cars" style="color:white">Choose a room:</label>
+                        <select name="roomtype" id="roomtype" onchange="total_price()">
+                            <option value="single">Single</option>
+                            <option value="double">Double</option>
+                        </select>
                     </div>
-    
-                    <!-- <div id="content">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <input type="text" id="input-group" placeholder="Phone number" name="Phone"required="required">
-                    </div> -->
+
     
                    
     
@@ -111,24 +111,13 @@
                         onfocus="(this.type='date')" onblur="(this.type='text')"placeholder="Check out" name="Checkout"required="required">
                     </div>
     
-                    <!-- <div id="content">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                        <select id="input-group" style="background-color: black;" name="Type" required="required">
-                            <option value="">Room Type</option>
-                            <option value="">Single Room</option>
-                            <option value="">Double Room</option>
-                        </select>
-                    </div> -->
+                    
 
                     <!-- <div id="content">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <input type="number" id="input-group" placeholder="Single room" name="Singleroom"required="required">
                     </div> -->
 
-                    <div id="content">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <input type="number" class="inputgroup" placeholder="Phone number" name="Phone"required="required">
-                    </div>
                     <div id="content">
                         <i class="fa fa-dollar" aria-hidden="true"></i>
                         <input type="number" class="inputgroup" id="price" placeholder="Total price" name="price"required="required" readonly>
@@ -150,8 +139,7 @@
                     <th>Customer Name</th>
                     <th>Customer Id</th>
                     <th>Customer Phone</th>
-                    <th>Single room</th>
-                    <th>Double room</th>
+                    <th>Room Type</th>
                     <th>Checkin</th>
                     <th>Checkout</th>
                     <th>Status</th>
@@ -168,8 +156,7 @@
                     <td><?php echo $res['customer_name']; ?></td>
                     <td><?php echo $res['customer_idCard']; ?></td>
                     <td><?php echo $res['customer_phone']; ?></td>
-                    <td><?php echo $res['numRoom1']; ?></td>
-                    <td><?php echo $res['numRoom2']; ?></td>
+                    <td><?php echo $res['roomtype']; ?></td>
                     <td><?php echo $res['checkin_date']; ?></td>
                     <td><?php echo $res['checkout_date']; ?></td>
                     <td><?php echo $res['status']; ?></td>
@@ -204,13 +191,22 @@
 
 <script>
     function total_price(){
-        var room1 = document.getElementById('room1').value
-        var room2 = document.getElementById('room2').value
+        // var room1 = document.getElementById('room1').value
+        // var room2 = document.getElementById('room2').value
         var checkin  = document.getElementById('checkin').value
         var checkout = document.getElementById('checkout').value
         var dates = Date.parse(checkout) - Date.parse(checkin)
         dates = dates/86400000
-        var total = (room1*70 + room2*120)*dates
+
+        var singlePrice = 70;
+        var doublePrice = 120;
+
+        if(document.getElementById('roomtype').value == 'single'){
+            var total = dates * singlePrice;
+        } else {
+            var total = dates * doublePrice;
+        }
+        // var total = (room1*70 + room2*120)*dates
         console.log(total)
         document.getElementById('price').value = total
         // document.getElementById('price').innerText = total

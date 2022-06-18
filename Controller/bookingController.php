@@ -5,6 +5,7 @@
     session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
     $objConfig = new config();
     $booking = new bookingModel($objConfig);
+    $allRoomList = $booking->getAllRoom();
     $bookingList = $booking->getAllBooking();
     $bookingList = $bookingList->fetch_all(MYSQLI_ASSOC);
     $confirmList = $booking->getAllConfirm();
@@ -20,7 +21,7 @@
         }
 
         // header('Location: ../View/employee.php');
-        header("Refresh:1");
+        header("Refresh: 0");
     }
 
     if(isset($_POST['demis'])){
@@ -33,12 +34,21 @@
         }
 
         // header('Location: ../View/employee.php');
-        header("Refresh:0");
+        header("Refresh: 0");
     }
 
     if(isset($_POST['addConfirm'])){
-        $booking->confirmBooking($_POST['customer_name'],$_POST['customer_idCard'],$_POST['customer_phone'],$_POST['checkin_date'],$_POST['checkout_date'],$_POST['roomNum']);
-        header("Refresh:1");
+
+        $res =  $booking->acceptBooking($_POST['booking_id'],1);
+        if ($res) {
+            echo "1";
+        } else {
+            echo "Error";
+        }
+        
+        $booking->confirmBooking($_POST['customer_name'],$_POST['customer_idCard'],$_POST['customer_phone'],$_POST['checkin_date'],$_POST['checkout_date'],$_POST['room-id']);
+        header("Refresh: 0");
+
     }
 
     if(isset($_POST['checkin'])){
@@ -47,7 +57,7 @@
         if($res){
 
             // header('Location: employee.php#confirmBooking');
-            header("Refresh:1");
+            header("Refresh: 0");
         }
         else{
             echo "Error";
@@ -61,7 +71,7 @@
         if($res){
 
             // header('Location: employee.php#confirmBooking');
-            header("Refresh:1");
+            header("Refresh: 0");
         }
         else{
             echo "Error";

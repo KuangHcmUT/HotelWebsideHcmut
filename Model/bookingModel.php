@@ -2,9 +2,17 @@
     require 'hotelModel.php';
     class bookingModel extends hotelModel{
 
+        public function getAllRoom() {
+            $this->open_db();
+            $sql = "SELECT * FROM room";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            return $result;
+        }
+
         public function getAllBooking(){
             $this->open_db();
-            $sql = "SELECT * FROM booking";
+            $sql = "SELECT * FROM booking WHERE status = 'booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
@@ -36,7 +44,7 @@
 
         public function acceptBooking($booking, $eID){
             $this->open_db();
-            $sql = "UPDATE booking SET status = 'Accepted', employee = '$eID' WHERE booking_id = '$booking'";
+            $sql = "UPDATE booking SET status = 'Confirm' WHERE booking_id = '$booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
@@ -44,7 +52,7 @@
 
         public function demisBooking($booking, $eID){
             $this->open_db();
-            $sql = "UPDATE booking SET status = 'Rejected', employee = '$eID' WHERE booking_id = '$booking'";
+            $sql = "UPDATE booking SET status = 'Rejected' WHERE booking_id = '$booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
