@@ -1,11 +1,15 @@
 <?php
     session_start();
+
+    if (!isset($_SESSION['userName'])) {
+        header('Location: login.php');
+    }   
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The River</title>
+<title>Booking</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -19,10 +23,10 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css?v=<?php echo time(); ?>">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-<link rel="icon" type="image/x-icon" href="/images/webicon.png">
+<link rel="icon" type="image/x-icon" href="./images/webicon.png">
 <link rel="stylesheet" type="text/css" href="../styles/booking.css=<?php echo time(); ?>">
 <link rel="stylesheet" type="text/css" href="../styles/booking_responsive.css=<?php echo time(); ?>">
-<link rel="stylesheet" href="../styles/admin.css=<?php echo time(); ?>">
+<link rel="stylesheet" href="./styles/admin.css=<?php echo time(); ?>">
 
 
 <link rel="stylesheet" type="text/css" href="styles/style.css?v=<?php echo time(); ?>">

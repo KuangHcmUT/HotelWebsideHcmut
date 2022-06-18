@@ -19,7 +19,7 @@
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/booking.css">
 <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
-<link rel="icon" type="image/x-icon" href="/images/webicon.png">
+<link rel="icon" type="image/x-icon" href="./images/webicon.png">
 </head>
 <body>
 
@@ -74,7 +74,7 @@
 									</div>
 								</div>
 								<div class="booking_price">$70/Night</div>
-								<div class="booking_link"><a href="booking.html">Single Room</a></div>
+								<div class="booking_link"><a href="booking.php">Single Room</a></div>
 							</div>
 
 							<!-- Slide -->
@@ -118,7 +118,7 @@
 									</div>
 								</div>
 								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Double Room</a></div>
+								<div class="booking_link"><a href="booking.php">Double Room</a></div>
 							</div>
 
 						</div>
@@ -251,7 +251,7 @@
 								<li>Upper floors accessible by lift</li>
 							</ul>
 						</div>
-						<div class="book_now_button"><a href="#">Book Now</a></div>
+						<div class="book_now_button"><a href="booking.php">Book Now</a></div>
 					</div>
 				</div>
 
@@ -319,7 +319,7 @@
 								<li>Upper floors accessible by lift</li>
 							</ul>
 						</div>
-						<div class="book_now_button"><a href="#">Book Now</a></div>
+						<div class="book_now_button"><a href="booking.php">Book Now</a></div>
 					</div>
 				</div>
 			</div>

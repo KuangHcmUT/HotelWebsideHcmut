@@ -5,6 +5,15 @@
     $user = $user->fetch_assoc();
     $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
     $res2 = mysqli_query($con, "SELECT * FROM users");
+    if (isset($_POST['btnadd'])) {
+        $new_username = $_POST['new_username'];
+        $new_name = $_POST['new_name'];
+        $new_password = $_POST['new_password'];
+        $new_phone = $_POST['new_phone'];
+        $new_role = $_POST['new_role'];
+        addaccount($new_username, $new_name, $new_password, $new_phone, $new_role);
+        header('Location: admin.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +33,7 @@
 <link rel="stylesheet" type="text/css" href="./styles/booking.css">
 <link rel="stylesheet" type="text/css" href="./styles/booking_responsive.css">
 <link rel="stylesheet" href="./styles/admin.css">
-<link rel="icon" type="image/x-icon" href="/images/webicon.png">
+<link rel="icon" type="image/x-icon" href="./images/webicon.png">
 </head>
 <body>
 
@@ -35,7 +44,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -96,7 +105,6 @@
             <tr>
                 <th>ID</th>
                 <th>User Name</th>
-                <th>Password</th>
                 <th>Full Name</th>
                 <th>Phone Number</th>
                 <th>Role</th>
@@ -109,7 +117,6 @@
             <tr>
                 <td><?php echo $res['ID']; ?></td>
                 <td><?php echo $res['userName']; ?></td>
-                <td><?php echo $res['password']; ?></td>
                 <td><?php echo $res['fullName']; ?></td>
                 <td><?php echo $res['PhoneNum']; ?></td>
                 <td><?php echo $res['role']; ?></td>
