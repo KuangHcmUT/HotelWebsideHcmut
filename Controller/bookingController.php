@@ -43,7 +43,7 @@
 
     if(isset($_POST['checkin'])){
         $res =  $booking->check_in($_POST['confirm_id']);
-        $res = $res && $booking->updateStatus($_POST['confirm_room'],'CheckedIn');
+        $res = $res && $booking->updateStatus($_POST['confirm_room'],'Using');
         if($res){
 
             // header('Location: employee.php#confirmBooking');
