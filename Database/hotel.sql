@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 18, 2022 lúc 11:35 AM
+-- Thời gian đã tạo: Th6 18, 2022 lúc 12:45 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -32,8 +32,7 @@ CREATE TABLE `booking` (
   `customer_name` varchar(50) NOT NULL,
   `customer_idCard` varchar(12) NOT NULL,
   `customer_phone` varchar(11) NOT NULL,
-  `numRoom1` int(2) NOT NULL DEFAULT 0,
-  `numRoom2` int(2) NOT NULL DEFAULT 0,
+  `roomtype` varchar(10) NOT NULL,
   `booking_date` date NOT NULL DEFAULT current_timestamp(),
   `checkin_date` date NOT NULL,
   `checkout_date` date NOT NULL,
@@ -98,26 +97,26 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_id`, `room_type`, `status`) VALUES
-(101, '1', 'Using'),
-(102, '1', 'Using'),
-(103, '1', 'Using'),
-(104, '2', 'Using'),
-(105, '2', 'Using'),
-(201, '1', 'Using'),
-(202, '1', 'Using'),
-(203, '1', 'Using'),
-(204, '2', 'Using'),
-(205, '2', 'Using'),
-(301, '1', 'Using'),
-(302, '1', 'Using'),
-(303, '1', 'Using'),
-(304, '2', 'Using'),
-(305, '2', 'Using'),
-(401, '1', 'Using'),
-(402, '1', 'Using'),
-(403, '1', 'Using'),
-(404, '2', 'Using'),
-(405, '2', 'Using');
+(101, 'single', 'Ready'),
+(102, 'single', 'Ready'),
+(103, 'single', 'Ready'),
+(104, 'double', 'Ready'),
+(105, 'double', 'Ready'),
+(201, 'single', 'Ready'),
+(202, 'single', 'Ready'),
+(203, 'single', 'Ready'),
+(204, 'double', 'Ready'),
+(205, 'double', 'Ready'),
+(301, 'single', 'Ready'),
+(302, 'single', 'Ready'),
+(303, 'single', 'Ready'),
+(304, 'double', 'Ready'),
+(305, 'double', 'Ready'),
+(401, 'single', 'Ready'),
+(402, 'single', 'Ready'),
+(403, 'single', 'Ready'),
+(404, 'double', 'Ready'),
+(405, 'double', 'Ready');
 
 -- --------------------------------------------------------
 
