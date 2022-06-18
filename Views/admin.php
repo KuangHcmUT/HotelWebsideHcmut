@@ -1,6 +1,6 @@
 <?php
     include_once '../Model/adminmodel.php';
-    include_once '../Controller/admincontroller.php';
+    require '../Controller/admincontroller.php';
     if (!isset($_SESSION['userName'])) {
         header('Location: login.php');
     }  
@@ -11,21 +11,18 @@
     }
 
 
-
-
-
     $user = $user->fetch_assoc();
-    $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
-    $res2 = mysqli_query($con, "SELECT * FROM users");
-    if (isset($_POST['btnadd'])) {
-        $new_username = $_POST['new_username'];
-        $new_name = $_POST['new_name'];
-        $new_password = $_POST['new_password'];
-        $new_phone = $_POST['new_phone'];
-        $new_role = $_POST['new_role'];
-        addaccount($new_username, $new_name, $new_password, $new_phone, $new_role);
-        header('Location: admin.php');
-    }
+    // $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
+    // $res2 = mysqli_query($con, "SELECT * FROM users");
+    // if (isset($_POST['btnadd'])) {
+    //     $new_username = $_POST['new_username'];
+    //     $new_name = $_POST['new_name'];
+    //     $new_password = $_POST['new_password'];
+    //     $new_phone = $_POST['new_phone'];
+    //     $new_role = $_POST['new_role'];
+    //     addaccount($new_username, $new_name, $new_password, $new_phone, $new_role);
+    //     header('Location: admin.php');
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -147,6 +144,17 @@
             </tbody> 
         </table>
 
+        <?php if(!$checks): ?>
+            <div class="alert alert-danger text-center">
+                <strong>Thêm tài khoản thất bại!</strong> Tên tài khoản đã được sử dụng!
+            </div>
+        <?php endif; ?>
+        <?php if(!$phone): ?>
+            <div class="alert alert-danger text-center">
+                <strong>Thêm tài khoản thất bại!</strong> Số điện thoại đã được sử dụng!
+            </div>
+        <?php endif; ?>
+
         <button class="add_button btn-open">Add a new account</button>
     
     </div>
@@ -159,22 +167,23 @@
             <header>
                 <h2>Add new account</h2>
             </header>
+            
             <form method="POST">
                 <div class="form-group">
                     <label for="username">User name</label>
-                    <input type="text" class="form-control" name="new_username" id="username" placeholder="Enter user name">
+                    <input type="text" class="form-control" name="new_username" id="username" placeholder="Enter user name" required="required">
                 </div>
                 <div class="form-group">
                     <label for="fullname">Full name</label>
-                    <input type="text" class="form-control" name="new_name" id="fullname" placeholder="Enter full name">
+                    <input type="text" class="form-control" name="new_name" id="fullname" placeholder="Enter full name" required="required">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="new_password" id="password" placeholder="Enter password">
+                    <input type="password" class="form-control" name="new_password" id="password" placeholder="Enter password" required="required">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone number</label>
-                    <input type="text" class="form-control" name="new_phone" id="phone" placeholder="Enter phone number">
+                    <input type="text" class="form-control" name="new_phone" id="phone" placeholder="Enter phone number" required="required">
                 </div>
                 <div class="form-group">
                     <label for="role">Role</label>
