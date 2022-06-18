@@ -129,7 +129,7 @@ CREATE TABLE `users` (
   `userName` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `fullName` varchar(100) NOT NULL,
-  `phoneNum` varchar(11) NOT NULL,
+  `PhoneNum` varchar(11) NOT NULL,
   `role` varchar(10) NOT NULL DEFAULT 'customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -137,7 +137,7 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `phoneNum`, `role`) VALUES
+INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `PhoneNum`, `role`) VALUES
 (1, 'haha', '123', 'Kang Dai Ka', '0965724322', 'employee'),
 (2, 'admin', 'admin', 'admin', '0965724321', 'admin'),
 (6, 'customer', 'customer', 'Kuang Dai Ka', '0587003309', 'customer');
