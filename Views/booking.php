@@ -83,7 +83,7 @@
                     </div> -->
 
                     <div id="content">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-navicon" aria-hidden="true"></i>
                         <label for="cars" style="color:white">Choose a room:</label>
                         <select name="roomtype" id="roomtype" onchange="total_price()">
                             <option value="single">Single</option>
@@ -99,7 +99,7 @@
                 <div id="second-group">
     
                     <div id="content">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <i class="fa fa-id-card-o" aria-hidden="true"></i>
                         <input type="text" class="inputgroup" placeholder="Your ID Card" name="ID" required="required">
                     </div>
     
