@@ -21,9 +21,8 @@
 					<div class="footer_title">Our Address</div>
 					<div class="footer_list">
 						<ul>
-							<li>Beach Str. 345</li>
-							<li>67559 Miami</li>
-							<li>USA</li>
+							<li>Ho Chi Minh City</li>
+							<li>Viet Nam</li>
 						</ul>
 					</div>
 				</div>
@@ -34,7 +33,7 @@
 					<div class="footer_list">
 						<ul>
 							<li>Tel: 0123-456789</li>
-							<li>Fax; 6783 4567 889</li>
+							<li>Fax: 6783 4567 889</li>
 							<li>hotelriver@gmail.com</li>
 						</ul>
 					</div>
