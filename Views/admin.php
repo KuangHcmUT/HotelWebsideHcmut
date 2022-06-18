@@ -1,7 +1,19 @@
 <?php
     include_once '../Model/adminmodel.php';
     include_once '../Controller/admincontroller.php';
+    if (!isset($_SESSION['userName'])) {
+        header('Location: login.php');
+    }  
+
     $user = findUser($_SESSION['userName']);
+    if($_SESSION['role'] != 'admin'){
+        header('Location: index.php');
+    }
+
+
+
+
+
     $user = $user->fetch_assoc();
     $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
     $res2 = mysqli_query($con, "SELECT * FROM users");

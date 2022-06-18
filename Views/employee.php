@@ -1,5 +1,13 @@
 <?php
     require '../Controller/bookingController.php';
+    if (!isset($_SESSION['userName'])) {
+        header('Location: login.php');
+    }  
+
+    // $user = findUser($_SESSION['userName']);
+    if($_SESSION['role'] != 'employee'){
+        header('Location: index.php');
+    }
 ?>
 
 <!DOCTYPE html>
