@@ -25,7 +25,7 @@
     <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-    <link rel="icon" type="image/x-icon" href="/images/webicon.png">
+    <link rel="icon" type="image/x-icon" href="./images/webicon.png">
 </head>
 <body>
 	<?php include 'header2.php';?>

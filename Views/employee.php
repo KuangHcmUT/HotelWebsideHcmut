@@ -24,7 +24,7 @@
     <link href="./plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="styles/booking.css">
     <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
-    <link rel="icon" type="image/x-icon" href="images/webicon.png">
+    <link rel="icon" type="image/x-icon" href="./images/webicon.png">
     <link rel ="stylesheet" href="Libs/CSS/employee.css">
 </head>
 <body>

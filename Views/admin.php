@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="./styles/booking.css">
 <link rel="stylesheet" type="text/css" href="./styles/booking_responsive.css">
 <link rel="stylesheet" href="./styles/admin.css">
-<link rel="icon" type="image/x-icon" href="/images/webicon.png">
+<link rel="icon" type="image/x-icon" href="./images/webicon.png">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
