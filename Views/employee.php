@@ -113,9 +113,9 @@
                                                 if($booking['checkin_date'] >= $list['checkin_date'] && $booking['checkin_date'] <= $list['checkout_date']){
                                                     array_push($failed_room, $room['room_id']);
                                                 }
-                                                // else {
-                                                //     echo '<option value="'.$room['room_id'].'">'.$room['room_id'].'</option>';
-                                                // }
+                                                else if($booking['checkout_date'] >= $list['checkin_date'] && $booking['checkout_date'] <= $list['checkout_date']){
+                                                    array_push($failed_room, $room['room_id']);
+                                                }
                                             }
                                             // else{
                                             //     echo '<option value="'.$room['room_id'].'">'.$room['room_id'].'</option>';
