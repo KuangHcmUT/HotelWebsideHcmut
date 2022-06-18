@@ -22,6 +22,8 @@
     $ID = $_POST['ID'];
     $Room1 = $_POST['Singleroom'];
     $Room2 = $_POST['Doubleroom'];
+    $total = $_POST['price'];
+        
 
     // $sql = "INSERT INTO `confirmbooking` (`customer_name`, `customer_idCard`, `customer_phone`, `checkin_date`, `checkout_date`) 
     // VALUES ('$fullname', '$ID', '$phone', '$Checkin', '$Checkout');";
@@ -32,13 +34,13 @@
     //     $result = mysqli_query($con, "INSERT INTO confirmbooking(customer_name, customer_idCard, customer_phone, checkin_date, checkout_date) VALUE('$fullname', '$ID', '$phone', '$Checkin', '$Checkout')");
     // }
 
-    function addbooking2 ($fullname, $ID, $phone, $Checkin, $Checkout, $Room1, $Room2) {
+    function addbooking2 ($fullname, $ID, $phone, $Checkin, $Checkout, $Room1, $Room2, $total) {
         global $con;
-        $result = mysqli_query($con, "INSERT INTO booking(customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, numRoom1, numRoom2) VALUE('$fullname', '$ID', '$phone', '$Checkin', '$Checkout', '$Room1', '$Room2')");
+        $result = mysqli_query($con, "INSERT INTO booking(customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, numRoom1, numRoom2, total_price) VALUE('$fullname', '$ID', '$phone', '$Checkin', '$Checkout', '$Room1', '$Room2', '$total')");
     }
 
     // addbooking($fullname, $ID, $phone, $Checkin, $Checkout);
-    addbooking2($fullname, $ID, $phone, $Checkin, $Checkout, $Room1, $Room2);
+    addbooking2($fullname, $ID, $phone, $Checkin, $Checkout, $Room1, $Room2, $total);
         header('Location: booking.php');
 
     // header("Location: booking.php?booking=success")
