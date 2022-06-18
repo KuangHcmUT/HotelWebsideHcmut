@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +32,7 @@
 <body>
 
 <div class="super_container">
-	<?php include 'Views/header.php';?>
+	<?php include 'Views/header2.php';?>
 
 
     <div class="home4">
@@ -63,13 +67,24 @@
 
                     <div id="content">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <input type="date" class=" booking_input2 booking_input_a booking_in" placeholder="Check in" name="Checkin" required="required">
+                        <input type="text" class=" booking_input2 booking_input_a booking_in" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" placeholder="Check in" name="Checkin" required="required"> 
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Number of Single rooms" name="Singleroom"required="required">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Number of Double rooms" name="Doubleroom"required="required">
                     </div>
     
-                    <div id="content">
+                    <!-- <div id="content">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <input type="text" id="input-group" placeholder="Phone number" name="Phone"required="required">
-                    </div>
+                    </div> -->
     
                    
     
@@ -79,23 +94,34 @@
     
                     <div id="content">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" id="input-group" placeholder="Your ID" name="ID" required="required">
+                        <input type="text" id="input-group" placeholder="Your ID Card" name="ID" required="required">
                     </div>
     
                    
     
                     <div id="content">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <input type="date" class=" booking_input2 booking_input_a booking_out" placeholder="Check out" name="Checkout"required="required">
+                        <input type="text" class=" booking_input2 booking_input_a booking_out" 
+                        onfocus="(this.type='date')" onblur="(this.type='text')"placeholder="Check out" name="Checkout"required="required">
                     </div>
     
-                    <div id="content">
+                    <!-- <div id="content">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <select id="input-group" style="background-color: black;" name="Type" required="required">
                             <option value="">Room Type</option>
                             <option value="">Single Room</option>
                             <option value="">Double Room</option>
                         </select>
+                    </div> -->
+
+                    <!-- <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Single room" name="Singleroom"required="required">
+                    </div> -->
+
+                    <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="number" id="input-group" placeholder="Phone number" name="Phone"required="required">
                     </div>
                 
                 </div>

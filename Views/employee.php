@@ -1,67 +1,5 @@
 <?php
-    require '../Model/bookingModel.php';
-    require '../Database/config.php';
-
-    session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
-    $objConfig = new config();
-    $booking = new bookingModel($objConfig);
-    $bookingList = $booking->getAllBooking();
-    $bookingList = $bookingList->fetch_all(MYSQLI_ASSOC);
-    $confirmList = $booking->getAllConfirm();
-    $confirmList = $confirmList->fetch_all(MYSQLI_ASSOC);
-    // $employee = $_SESSION['employee'];
-    if(isset($_POST['accept'])){
-        $res =  $booking->acceptBooking($_POST['booking_id'],1);
-        if ($res) {
-            echo "1";
-        } else {
-            echo "Error";
-        }
-
-        // header('Location: ../View/employee.php');
-        header("Refresh:0");
-    }
-
-    if(isset($_POST['demis'])){
-        $res = $booking->demisBooking($_POST['booking_id'],1);
-
-        if ($res) {
-            echo "1";
-        } else {
-            echo "Error";
-        }
-
-        // header('Location: ../View/employee.php');
-        header("Refresh:0");
-    }
-    // if(isset($_POST['confirm'])){
-    //     $booking->confirmBooking($_POST['booking_id']);
-    //     header('Location: ../View/employee.php');
-    // }
-    if(isset($_POST['checkin'])){
-        $res =  $booking->check_in($_POST['confirm_id']);
-        if($res){
-
-            // header('Location: employee.php#confirmBooking');
-            header("Refresh:0");
-        }
-        else{
-            echo "Error";
-        }
-    }
-
-    if(isset($_POST['checkout'])){
-        $res = $booking->check_out($_POST['confirm_id']);
-        if($res){
-
-            // header('Location: employee.php#confirmBooking');
-            header("Refresh:0");
-        }
-        else{
-            echo "Error";
-        }
-    }
-
+    require '../Controller/bookingController.php';
 ?>
 
 <!DOCTYPE html>
@@ -84,13 +22,30 @@
     <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.3.4/animate.css">
     <link href="../plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
     <link href="../plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="../styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="../styles/booking.css">
+    <link rel="stylesheet" type="text/css" href="../styles/booking_responsive.css">
     <link rel="icon" type="image/x-icon" href="../images/webicon.png">
     <link rel ="stylesheet" href="../Libs/CSS/employee.css">
 </head>
 <body>
 <?php include '../Views/header2.php'; ?>
+
+    <div class="home">
+		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title">Employee Manager</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
     <div class="container employee-con" style="margin-top: 100px;">
         <div id="bookingList" >
@@ -108,8 +63,8 @@
                 <th>Checkin</th>
                 <th>Checkout</th>
                 <th>R1/R2</th>
-                <th>Status</th>
                 <th>Note</th>
+                <th>Status</th>
                 <th>Active</th>
             </tr>
             </thead>
@@ -122,13 +77,22 @@
                     <td><?php echo $booking['checkin_date']; ?></td>
                     <td><?php echo $booking['checkout_date']; ?></td>
                     <td><?php echo $booking['numRoom1'] . ' / ' . $booking['numRoom2']; ?></td>
-                    <td><?php echo $booking['status']; ?></td>
                     <td><?php echo $booking['note']; ?></td>
+                    <td><?php echo $booking['status']; ?></td>
                     <td>
                         <form action="#" method="POST">
                             <input type="hidden" name="booking_id" value="<?php echo $booking['booking_id']; ?>">
+                            <input type="hidden" name="customer_name" value="<?php echo $booking['customer_name']; ?>">
+                            <input type="hidden" name="customer_idCard" value="<?php echo $booking['customer_idCard']; ?>">
+                            <input type="hidden" name="customer_phone" value="<?php echo $booking['customer_phone']; ?>">
+                            <input type="hidden" name="checkin_date" value="<?php echo $booking['checkin_date']; ?>">
+                            <input type="hidden" name="checkout_date" value="<?php echo $booking['checkout_date']; ?>">
+
                             <button name="accept" type="submit" class="btn btn-primary accept" data-id="<?php echo $booking['booking_id']; ?>">Accept</button>
-                            <button name="demis"  type="submit" class="btn btn-danger demis" data-id="<?php echo $booking['booking_id']; ?>">Demis</button>
+                            <button name="demis"  type="submit" class="btn btn-danger demis" data-id="<?php echo $booking['booking_id']; ?>">Reject </button>
+                            <br>
+                            <input type="text" name="roomNum" placeholder="Input Room number">
+                            <button name="addConfirm"  type="submit" class="btn btn-danger addConfirm" data-id="<?php echo $booking['booking_id']; ?>">Confirm</button>
                         </form>
                         
                     </td>
@@ -171,6 +135,8 @@
                     <td>
                         <form action="#" method="POST">
                             <input type="hidden" name="confirm_id" value="<?php echo $confirm['id']; ?>">
+                            <input type="hidden" name="confirm_room" value="<?php echo $confirm['room_number']; ?>">
+                            
                             <button name="checkin"  type="submit" class="btn btn-primary checkin" data-id="<?php echo $confirm['id']; ?>">CheckIn</button>
                             <button name="checkout" type="submit" class="btn btn-danger checkout" data-id="<?php echo $confirm['id']; ?>">CheckOut</button>
                         </form>
@@ -180,6 +146,21 @@
             <?php } ?>
             </tbody>
             </table>
+        </div>
+        <div class="addPopUp" style="display: none;">
+            <div class="title text-center mb-1">Thêm mới</div>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="customer_name">Customer Name</label>
+                    <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="Customer Name">
+                </div>
+                <div class="form-group">
+                    <label for="customer_phone">PhoneNum</label>
+                    <input type="text" class="form-control" name="customer_phone" id="customer_phone" placeholder="PhoneNum">
+                </div>
+                <div class="form-group">
+                    <label for="customer_idCard">Cus_idCard</label>
+                    <input type="text" class="form-control" name="customer_idCard" id="customer_idCard" placeholder="Cus_idCard">
         </div>
     </div>
 

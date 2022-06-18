@@ -44,15 +44,15 @@
 
         public function demisBooking($booking, $eID){
             $this->open_db();
-            $sql = "UPDATE booking SET status = 'Demised', employee = '$eID' WHERE booking_id = '$booking'";
+            $sql = "UPDATE booking SET status = 'Rejected', employee = '$eID' WHERE booking_id = '$booking'";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
         }
 
-        public function confirmBooking($booking){
+        public function confirmBooking($name, $id, $phone, $checkin, $checkout, $room){
             $this->open_db();
-            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ()";
+            $sql = "INSERT INTO confirmbooking (customer_name, customer_idCard, customer_phone, checkin_date, checkout_date, room_number) VALUES ('$name', '$id', '$phone', '$checkin', '$checkout', '$room')";
             $result = $this->conn->query($sql);
             $this->close_db();
             return $result;
@@ -71,6 +71,25 @@
             $sql = "UPDATE confirmbooking SET status = 'Checked Out' WHERE id = '$id'";
             $result = $this->conn->query($sql);
             $this->close_db();
+            return $result;
+        }
+
+        public function updateStatus($room, $status){
+            $this->open_db();
+            $sql = "UPDATE room SET status = '$status' WHERE room_id = '$room'";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            return $result;
+        }
+
+        public function getUser($userName){
+            $this->open_db();
+            $sql = "SELECT * FROM users WHERE userName = '$userName'";
+            $result = $this->conn->query($sql);
+            $this->close_db();
+            if($result->num_rows > 0) {
+                return $result->fetch_assoc();
+            }
             return $result;
         }
 
