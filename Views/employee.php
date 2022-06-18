@@ -15,23 +15,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap-4.1.2/bootstrap.min.css">
-    <link href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.3.4/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.3.4/animate.css">
-    <link href="../plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-    <link href="../plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../styles/booking.css">
-    <link rel="stylesheet" type="text/css" href="../styles/booking_responsive.css">
-    <link rel="icon" type="image/x-icon" href="../images/webicon.png">
-    <link rel ="stylesheet" href="../Libs/CSS/employee.css">
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="./plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="./plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="./plugins/OwlCarousel2-2.3.4/animate.css">
+    <link href="./plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="./plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/booking.css">
+    <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
+    <link rel="icon" type="image/x-icon" href="images/webicon.png">
+    <link rel ="stylesheet" href="Libs/CSS/employee.css">
 </head>
 <body>
-<?php include '../Views/header2.php'; ?>
+<?php include 'header2.php'; ?>
 
     <div class="home">
-		<div class="background_image" style="background-image:url(../images/booking.jpg)"></div>
+		<div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-<?php include '../Views/footer2.php'; ?>
+<?php include 'footer2.php'; ?>
 
 </body>
 <script>
@@ -196,19 +196,19 @@
 }
 </script>
 
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../styles/bootstrap-4.1.2/popper.js"></script>
-<script src="../styles/bootstrap-4.1.2/bootstrap.min.js"></script>
-<script src="../plugins/greensock/TweenMax.min.js"></script>
-<script src="../plugins/greensock/TimelineMax.min.js"></script>
-<script src="../plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="../plugins/greensock/animation.gsap.min.js"></script>
-<script src="../plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="../plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
-<script src="../plugins/easing/easing.js"></script>
-<script src="../plugins/progressbar/progressbar.min.js"></script>
-<script src="../plugins/parallax-js-master/parallax.min.js"></script>
-<script src="../plugins/jquery-datepicker/jquery-ui.js"></script>
-<script src="../plugins/colorbox/jquery.colorbox-min.js"></script>
-<script src="../js/custom.js"></script>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./styles/bootstrap-4.1.2/popper.js"></script>
+<script src="./styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="./plugins/greensock/TweenMax.min.js"></script>
+<script src="./plugins/greensock/TimelineMax.min.js"></script>
+<script src="./plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="./plugins/greensock/animation.gsap.min.js"></script>
+<script src="./plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="./plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+<script src="./plugins/easing/easing.js"></script>
+<script src="./plugins/progressbar/progressbar.min.js"></script>
+<script src="./plugins/parallax-js-master/parallax.min.js"></script>
+<script src="./plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="./plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="./js/custom.js"></script>
 </html>

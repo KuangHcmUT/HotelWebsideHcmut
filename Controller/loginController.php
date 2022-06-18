@@ -1,8 +1,8 @@
 
 
 <?php
-require './Model/loginModel.php';
-require_once './Database/config.php';
+require '../Model/loginModel.php';
+require_once '../Database/config.php';
 
 session_status() === PHP_SESSION_ACTIVE ? TRUE : session_start();
 // session_start();
@@ -28,12 +28,12 @@ if(isset($_POST['loginBtn'])){
         $currentUser = $login->getUser($_SESSION['userName']);
         if ($currentUser['role'] == 'admin') {
             $_SESSION['role'] = 'admin';
-            header('Location: Views/admin.php');
+            header('Location: admin.php');
             exit();
         }
         else if ($currentUser['role'] == 'employee') {
             $_SESSION['role'] = 'employee';
-            header('Location: Views/employee.php');
+            header('Location: employee.php');
             exit();
         }
         else if ($currentUser['role'] == 'customer') {

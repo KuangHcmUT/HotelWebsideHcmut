@@ -1,8 +1,8 @@
 <?php 
     // include_once '../Model/adminmodel.php';
-    include_once 'Model/adminmodel.php';
+    include_once '../Model/adminmodel.php';
     // include_once '../Controller/admincontroller.php';
-    include_once 'Controller/admincontroller.php';
+    include_once '../Controller/admincontroller.php';
     // $res1 = mysqli_query($con, "SELECT * FROM confirmbooking");
     // $res2 = mysqli_query($con, "SELECT * FROM users");
     
