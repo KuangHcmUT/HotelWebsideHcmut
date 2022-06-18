@@ -1,142 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-image: url(images/resort.jpg);
     background-position: center;
     background-size: auto;
 }
-.home2
-{
-	width: 100%;
-	height: 130vh;
+
+.home2 {
+    width: 100%;
+    height: 130vh;
 }
-.home3
-{
-	width: 100%;
-	height: 150vh;
+
+.home3 {
+    width: 100%;
+    height: 150vh;
 }
-.home4
-{
-	width: 100%;
-	height: 80vh;
+
+.home4 {
+    width: 100%;
+    height: 80vh;
     /* background: #0f0e24; */
 }
-.background_image
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+
+.background_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
-.home4 .background_image
-{
-	opacity: 1.0;
+
+.home4 .background_image {
+    opacity: 1.0;
     filter: brightness(30%)
 }
+
+
 /* .home4 .background_image
 {
 	background: #0f0e24;
 } */
-.space
-{
+
+.space {
     padding-top: 20px;
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
-.home_title2
-{
-	font-size: 80px;
-	font-weight: 600;
-	color: #ffffff;
-	line-height: 1.2;
+
+.home_title2 {
+    font-size: 80px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
 }
-.booking_input2
-{
-	width: 85%;
-	height: 36px;
-	background: rgba(255,255,255,0.2);
-	border: solid 2px #ffffff;
-	padding-left: 27px;
-	font-size: 14px;
-	font-weight: 500;
-	color: #ffffff;
-	outline: none;
+
+.booking_input2 {
+    width: 85%;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border: solid 2px #ffffff;
+    padding-left: 27px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    outline: none;
 }
-.booking2
-{
-	background: #ffffff;
+
+.booking2 {
+    background: #ffffff;
     /*107*/
-	padding-top: 137px; 
+    padding-top: 137px;
     /*114*/
-	padding-bottom: 134px;
+    padding-bottom: 134px;
 }
-#form{
+
+#form {
     background-color: #000;
-    height:400px;
-    width:800px;
+    height: 400px;
+    width: 800px;
     margin: auto;
     margin-top: 200px;
-    opacity:0.7;
+    opacity: 0.7;
 }
-#first-group{
-    border:none;
-    width:400px;
+
+#first-group {
+    border: none;
+    width: 400px;
     /*38*/
     margin-top: 30px;
     position: absolute;
 }
-#content{
+
+#content {
     border: 1px solid #fff;
-    margin:10px;
+    margin: 10px;
     margin-left: 8px;
-    padding:5px;
+    padding: 5px;
 }
-#content #input-group{
-    border:none;
-    outline:none;
+
+#content .inputgroup {
+    border: none;
+    outline: none;
     background: transparent;
-    margin-left:8px;
-    width:300px;
-    color:#fff;
+    margin-left: 8px;
+    width: 300px;
+    color: #fff;
 }
-::placeholder{
-    color:#fff;
+
+::placeholder {
+    color: #fff;
 }
-.fa{
-    display:inline-block;
-    color:red;
-    border-right:1px solid #fff;
-    padding:8px;
+
+.fa {
+    display: inline-block;
+    color: red;
+    border-right: 1px solid #fff;
+    padding: 8px;
     margin-left: 8px;
 }
-#second-group{
-    border:none;
-    width:400px;
+
+#second-group {
+    border: none;
+    width: 400px;
     /*55*/
     margin-top: 47px;
-    margin-left:400px;
+    margin-left: 400px;
 }
-#submit-btn{
+
+#submit-btn {
     margin-top: 30px;
     margin-left: 600px;
-    background: #eaed0b;
-    color:#fff;
-    width:150px;
+    color: #fff;
+    width: 150px;
     cursor: pointer;
-    border:2px solid red;
-    outline:none;
-    padding:10px;
+    outline: none;
+    padding: 10px;
     font-size: 20px;
 }
 
 @media screen and (max-width:710px) {
-    .main-form{
+    .main-form {
         text-align: center;
     }
 }

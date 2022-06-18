@@ -1,8 +1,3 @@
-<?php
-    require '../Controller/loginController.php';
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,29 +37,38 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example13">User name</label>
-            <input name="userName" type="text" id="form1Example13" class="form-control form-control-lg" />
+            <input name="userName" type="text" id="form1Example13" class="form-control form-control-lg" placeholder="User name" required="required"/>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example23">Password</label>
-            <input name="password" type="password" id="form1Example23" class="form-control form-control-lg" />
+            <input name="password" type="password" id="form1Example23" class="form-control form-control-lg" placeholder="Password" required="required"/>
           </div>
 
-          <div class="d-flex justify-content-around align-items-center mb-4">
-            <!-- Checkbox -->
-            <a style="text-align: left;" href="#!">Forgot password</a>
-            <a style="text-align: right;" href="./register.php">Register</a>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example23">Confirm Password</label>
+            <input name="confirmpassword" type="password" id="form1Example23" class="form-control form-control-lg" placeholder="Confirm password" required="required"/>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Your Full Name</label>
+            <input name="fullName" type="text" id="form1Example13" class="form-control form-control-lg" placeholder="Full name" required="required"/>
+          </div>
+          
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Your Phone Number</label>
+            <input name="phoneNum" type="text" id="form1Example13" class="form-control form-control-lg" placeholder="Phone number" required="required"/>
           </div>
 
           <!-- Submit button -->
-          <button name="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          <button name="signUpBtn" type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
         </form>
-        <?php if(!$check): ?>
+        <!-- <?php if(!$check): ?>
           <div class="alert alert-danger text-center">
-            <strong>Đăng nhập thất bại!</strong> Tên tài khoản hoặc mật khẩu không chính xác!
+            <strong>Đăng Ký thất bại!</strong> Tên tài khoản hoặc mật khẩu không chính xác!
           </div>
-        <?php endif; ?>
+        <?php endif; ?> -->
       </div>
     </div>
   </div>
@@ -105,5 +109,3 @@
 <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/custom.js"></script>
 </html>
-<!--  -->
-

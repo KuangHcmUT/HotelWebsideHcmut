@@ -62,23 +62,23 @@
     
                     <div id="content">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" id="input-group" placeholder="Full name" name="Fname" required="required">
+                        <input type="text" class="inputgroup" placeholder="Full name" name="Fname" required="required">
                     </div>
 
                     <div id="content">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <input type="text" class=" booking_input2 booking_input_a booking_in" onfocus="(this.type='date')"
+                        <input type="text" id="checkin" onchange="total_price()" class=" booking_input2 booking_input_a booking_in" onfocus="(this.type='date')"
                         onblur="(this.type='text')" placeholder="Check in" name="Checkin" required="required"> 
                     </div>
 
                     <div id="content">
                         <i class="fa fa-bed" aria-hidden="true"></i>
-                        <input type="number" id="input-group" placeholder="Number of Single rooms" name="Singleroom"required="required">
+                        <input type="number" onchange="total_price()" id="room1" class="inputgroup" placeholder="Number of Single rooms" name="Singleroom"required="required">
                     </div>
 
                     <div id="content">
                         <i class="fa fa-bed" aria-hidden="true"></i>
-                        <input type="number" id="input-group" placeholder="Number of Double rooms" name="Doubleroom"required="required">
+                        <input type="number" onchange="total_price()" id="room2" class="inputgroup" placeholder="Number of Double rooms" name="Doubleroom"required="required">
                     </div>
     
                     <!-- <div id="content">
@@ -94,14 +94,14 @@
     
                     <div id="content">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" id="input-group" placeholder="Your ID Card" name="ID" required="required">
+                        <input type="text" class="inputgroup" placeholder="Your ID Card" name="ID" required="required">
                     </div>
     
                    
     
                     <div id="content">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <input type="text" class=" booking_input2 booking_input_a booking_out" 
+                        <input type="text" onchange="total_price()" id="checkout" class=" booking_input2 booking_input_a booking_out" 
                         onfocus="(this.type='date')" onblur="(this.type='text')"placeholder="Check out" name="Checkout"required="required">
                     </div>
     
@@ -121,11 +121,15 @@
 
                     <div id="content">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        <input type="number" id="input-group" placeholder="Phone number" name="Phone"required="required">
+                        <input type="number" class="inputgroup" placeholder="Phone number" name="Phone"required="required">
+                    </div>
+                    <div id="content">
+                        <i class="fa fa-dollar" aria-hidden="true"></i>
+                        <input type="number" class="inputgroup" id="price" placeholder="Total price" name="price"required="required" readonly>
                     </div>
                 
                 </div>
-                <button type="submit" name="submit" value="submit" id="submit-btn">Book Now</button>
+                <button class="btn btn-primary" type="submit" name="submit" value="submit" id="submit-btn">Book Now</button>
                
                 </div>
             </form>
@@ -153,3 +157,20 @@
 <script src="js/custom.js"></script>
 </body>
 </html>
+
+<script>
+    function total_price(){
+        var room1 = document.getElementById('room1').value
+        var room2 = document.getElementById('room2').value
+        var checkin  = document.getElementById('checkin').value
+        var checkout = document.getElementById('checkout').value
+        var dates = Date.parse(checkout) - Date.parse(checkin)
+        dates = dates/86400000
+        var total = (room1*70 + room2*120)*dates
+        console.log(total)
+        document.getElementById('price').value = total
+        // document.getElementById('price').innerText = total
+        console.log(room1, room2, checkin, checkout, dates)
+
+    }
+</script>
