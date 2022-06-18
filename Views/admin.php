@@ -81,9 +81,9 @@
             </thead>
             <tbody>
             <?php
-            $i = 0;
+            
             while ($res = mysqli_fetch_array($res1)){
-            $i = $i + 1;
+        
             ?>
             <tr>
                 <td><?php echo $res['id']; ?></td>

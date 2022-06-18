@@ -1,6 +1,8 @@
 <?php
+    include_once '../Model/adminmodel.php';
     session_start();
-
+    $num = $_SESSION['PhoneNum'];
+    $result = mysqli_query($con, "SELECT * FROM booking WHERE customer_phone = '$num'");
     if (!isset($_SESSION['userName'])) {
         header('Location: login.php');
     }   
@@ -137,6 +139,44 @@
                
                 </div>
             </form>
+        </div>
+
+        <div class="container">
+            <h2 style="margin-top: 20px; margin-bottom: 20px;">/. My booking ./</h2>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr style="text-align: center;">
+                    <th>ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Id</th>
+                    <th>Customer Phone</th>
+                    <th>Single room</th>
+                    <th>Double room</th>
+                    <th>Checkin</th>
+                    <th>Checkout</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                
+                while ($res = mysqli_fetch_array($result)){
+            
+                ?>
+                <tr style="color: #000000; text-align: center;">
+                    <td><?php echo $res['booking_id']; ?></td>
+                    <td><?php echo $res['customer_name']; ?></td>
+                    <td><?php echo $res['customer_idCard']; ?></td>
+                    <td><?php echo $res['customer_phone']; ?></td>
+                    <td><?php echo $res['numRoom1']; ?></td>
+                    <td><?php echo $res['numRoom2']; ?></td>
+                    <td><?php echo $res['checkin_date']; ?></td>
+                    <td><?php echo $res['checkout_date']; ?></td>
+                    <td><?php echo $res['status']; ?></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+            </table>
         </div>
     
 
