@@ -62,7 +62,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content text-center">
-							<div class="home_title">Welcome to The River!</div>
+							<div class="home_title">Admin Manager</div>
 						</div>
 					</div>
 				</div>

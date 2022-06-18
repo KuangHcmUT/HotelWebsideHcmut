@@ -26,8 +26,8 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css?v=<?php echo time(); ?>">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="icon" type="image/x-icon" href="./images/webicon.png">
-<link rel="stylesheet" type="text/css" href="../styles/booking.css=<?php echo time(); ?>">
-<link rel="stylesheet" type="text/css" href="../styles/booking_responsive.css=<?php echo time(); ?>">
+<link rel="stylesheet" type="text/css" href="./styles/booking.css=<?php echo time(); ?>">
+<link rel="stylesheet" type="text/css" href="./styles/booking_responsive.css=<?php echo time(); ?>">
 <link rel="stylesheet" href="./styles/admin.css=<?php echo time(); ?>">
 
 
@@ -41,7 +41,7 @@
 	<?php include 'header2.php';?>
 
 
-    <div class="home4">
+    <!-- <div class="home4">
 		<div class="background_image" style="background-image:url(images/booking.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
@@ -54,15 +54,15 @@
 				</div>
 			</div>
 		</div>
-    </div>
+    </div> -->
 
     
-        <div class="home3">
-            <div class="background_image" style="background-image:url(images/resort.jpg)"></div>
+        <div class="home4">
+            <div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
             <div class = "space"></div>
             <form action= "connect_booking.php"  method="POST">
                 <div id="form" required="required">
-                <h1 class="text-white text-center">Booking Now</h1>
+                <h1 class="text-white text-center">Book A Room</h1>
     
                 <div id="first-group">
     
@@ -124,14 +124,14 @@
                     </div>
                 
                 </div>
-                <button class="btn btn-primary" type="submit" name="submit" value="submit" id="submit-btn">Book Now</button>
+                <button class="btn btn-success" type="submit" name="submit" value="submit" id="submit-btn">Book Now</button>
                
                 </div>
             </form>
         </div>
 
         <div class="container">
-            <h2 style="margin-top: 20px; margin-bottom: 20px;">/. My booking ./</h2>
+            <h2 style="margin-top: 90px; margin-bottom: 20px;">/. My booking ./</h2>
             <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr style="text-align: center;">

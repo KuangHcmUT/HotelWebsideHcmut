@@ -52,6 +52,7 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
 					</form>
 				<?php } else { ?>
 					<div class="book_button"><a href="login.php">Login</a></div>
+					<div class="book_button"><a href="register.php">Register</a></div>
 				<?php } ?>
 
 				<!-- Hamburger Menu -->

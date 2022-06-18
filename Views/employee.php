@@ -57,7 +57,7 @@
 
     <div class="container employee-con" style="margin-top: 100px;">
         <div id="bookingList" >
-            <div class="title text-center mb-1">Danh sách đặt phòng</div>
+            <div class="title text-center mb-1">Danh Sách Đặt Phòng</div>
             <div class="form-inline">
                 <i class="fa fa-search icon"> </i>
                 <input type="text" class="form-control mb-2 mr-sm-2" name="search-phone" id="search-phone" onkeyup="show_search_result()" placeholder="Search for phone">   
