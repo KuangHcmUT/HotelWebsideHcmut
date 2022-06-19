@@ -482,6 +482,13 @@
 			float: left;
 			color: #ffc107;
 		}
+		@media only screen and (max-width: 600px) {
+			.give-feedback {
+				padding: 4%;
+				height: 400px;
+				margin-bottom: 750px;
+			}
+		}
 	</style>
 
 
