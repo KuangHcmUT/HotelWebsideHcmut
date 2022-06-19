@@ -61,7 +61,7 @@
             <div class="background_image" style="background-image:url(./images/booking.jpg)"></div>
             <div class = "space"></div>
             <form action= "connect_booking.php"  method="POST">
-                <div id="form" required="required">
+            <div id="form" required="required">
                 <h1 class="text-white text-center">Book A Room</h1>
     
                 <div id="first-group">
@@ -101,22 +101,13 @@
                     <div id="content">
                         <i class="fa fa-id-card-o" aria-hidden="true"></i>
                         <input type="text" class="inputgroup" placeholder="Your ID Card" name="ID" required="required">
-                    </div>
-    
-                   
+                    </div>              
     
                     <div id="content">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         <input type="text" onchange="total_price()" id="checkout" class=" booking_input2 booking_input_a booking_out" 
                         onfocus="(this.type='date')" onblur="(this.type='text')"placeholder="Check out" name="Checkout"required="required">
                     </div>
-    
-                    
-
-                    <!-- <div id="content">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        <input type="number" id="input-group" placeholder="Single room" name="Singleroom"required="required">
-                    </div> -->
 
                     <div id="content">
                         <i class="fa fa-dollar" aria-hidden="true"></i>
@@ -124,9 +115,10 @@
                     </div>
                 
                 </div>
+                
                 <button class="btn btn-success" type="submit" name="submit" value="submit" id="submit-btn">Book Now</button>
                
-                </div>
+            </div>
             </form>
         </div>
 
