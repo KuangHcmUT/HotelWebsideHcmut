@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 18, 2022 lúc 12:45 PM
+-- Thời gian đã tạo: Th6 19, 2022 lúc 04:11 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `hotel`
 --
+CREATE DATABASE IF NOT EXISTS `hotel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hotel`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Cấu trúc bảng cho bảng `booking`
 --
 
+DROP TABLE IF EXISTS `booking`;
 CREATE TABLE `booking` (
   `booking_id` int(8) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
@@ -40,12 +43,22 @@ CREATE TABLE `booking` (
   `status` varchar(50) NOT NULL DEFAULT 'booking'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `customer_name`, `customer_idCard`, `customer_phone`, `roomtype`, `booking_date`, `checkin_date`, `checkout_date`, `total_price`, `status`) VALUES
+(8, 'customer', '1914802', '0587003309', 'single', '2022-06-19', '2022-06-13', '2022-06-15', '140', 'Confirm'),
+(9, 'customer', '1914802', '0587003309', 'double', '2022-06-19', '2022-06-22', '2022-06-26', '480', 'Confirm'),
+(10, 'Quang Nguyen Van', '285752311', '0147852369', 'single', '2022-06-19', '2022-06-22', '2022-06-23', '70', 'booking');
+
 -- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `confirmbooking`
 --
 
+DROP TABLE IF EXISTS `confirmbooking`;
 CREATE TABLE `confirmbooking` (
   `id` int(11) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
@@ -57,12 +70,21 @@ CREATE TABLE `confirmbooking` (
   `status` varchar(50) NOT NULL DEFAULT 'Confirm'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `confirmbooking`
+--
+
+INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `customer_phone`, `checkin_date`, `checkout_date`, `room_number`, `status`) VALUES
+(7, 'customer', '1914802', '0587003309', '2022-06-13', '2022-06-15', 101, 'Checked Out'),
+(8, 'customer', '1914802', '0587003309', '2022-06-22', '2022-06-26', 104, 'Confirm');
+
 -- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `feedback`
 --
 
+DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE `feedback` (
   `id` int(8) NOT NULL,
   `userName` varchar(32) NOT NULL,
@@ -86,6 +108,7 @@ INSERT INTO `feedback` (`id`, `userName`, `content`, `rating`, `imageSrc`) VALUE
 -- Cấu trúc bảng cho bảng `room`
 --
 
+DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room` (
   `room_id` int(3) NOT NULL,
   `room_type` varchar(10) NOT NULL,
@@ -124,6 +147,7 @@ INSERT INTO `room` (`room_id`, `room_type`, `status`) VALUES
 -- Cấu trúc bảng cho bảng `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `ID` int(8) NOT NULL,
   `userName` varchar(32) NOT NULL,
@@ -138,9 +162,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `userName`, `password`, `fullName`, `PhoneNum`, `role`) VALUES
-(1, 'haha', '123', 'Kang Dai Ka', '0965724322', 'employee'),
+(1, 'employee', 'employee', 'employee', '0965724322', 'employee'),
 (2, 'admin', 'admin', 'admin', '0965724321', 'admin'),
-(6, 'customer', 'customer', 'Kuang Dai Ka', '0587003309', 'customer');
+(6, 'customer', 'customer', 'customer', '0587003309', 'customer'),
+(11, 'customer2', 'customer', 'Quang Nguyen Van', '0147852369', 'customer');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -177,7 +202,7 @@ ALTER TABLE `room`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `userName` (`userName`),
-  ADD UNIQUE KEY `PhoneNum` (`phoneNum`);
+  ADD UNIQUE KEY `PhoneNum` (`PhoneNum`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -187,13 +212,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `booking_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `confirmbooking`
 --
 ALTER TABLE `confirmbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `feedback`
@@ -205,7 +230,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
