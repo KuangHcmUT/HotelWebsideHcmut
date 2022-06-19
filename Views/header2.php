@@ -8,15 +8,15 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
 	unset($_SESSION['phoneNum']);
 	header('Location: login.php');
 	exit();
-}
+}	
 
 ?>
 	<header class="header">
 		<div class="header_content d-flex flex-row align-items-center justify-content-start">
 			<div class="logo"><a href="#">.The River</a></div>
-			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-				<nav class="main_nav">
-					<ul class="d-flex flex-row align-items-start justify-content-start">
+			<div class="ml-auto d-flex flex-row align-items-center justify-content-start" >
+				<nav class="main_nav" id="navBar">
+					<ul class="d-flex flex-row align-items-start justify-content-start" id="divNav">
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="room.php">Rooms</a></li>
 						<li><a href="booking.php">Booking</a></li>
@@ -56,7 +56,8 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
 				<?php } ?>
 
 				<!-- Hamburger Menu -->
-				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				<div class="hamburger " onclick="showNav()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
 			</div>
 		</div>
 	</header>
@@ -69,3 +70,12 @@ if (isset($_POST['logoutBtn']) && isset($_SESSION['userName'])) {
         	background-position: center;
 		} */
 	</style>
+	<script>
+		function showNav() {
+			var x = document.getElementById("navBar");
+			var y = document.getElementById("divNav");
+			// y.classList.remove("flex-row");
+
+			x.style.display = "block";
+		}
+	</script>
