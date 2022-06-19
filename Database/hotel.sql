@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 19, 2022 lúc 04:03 AM
+-- Thời gian đã tạo: Th6 19, 2022 lúc 04:11 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `hotel`
 --
+CREATE DATABASE IF NOT EXISTS `hotel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hotel`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Cấu trúc bảng cho bảng `booking`
 --
 
+DROP TABLE IF EXISTS `booking`;
 CREATE TABLE `booking` (
   `booking_id` int(8) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
@@ -55,6 +58,7 @@ INSERT INTO `booking` (`booking_id`, `customer_name`, `customer_idCard`, `custom
 -- Cấu trúc bảng cho bảng `confirmbooking`
 --
 
+DROP TABLE IF EXISTS `confirmbooking`;
 CREATE TABLE `confirmbooking` (
   `id` int(11) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
@@ -80,6 +84,7 @@ INSERT INTO `confirmbooking` (`id`, `customer_name`, `customer_idCard`, `custome
 -- Cấu trúc bảng cho bảng `feedback`
 --
 
+DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE `feedback` (
   `id` int(8) NOT NULL,
   `userName` varchar(32) NOT NULL,
@@ -103,6 +108,7 @@ INSERT INTO `feedback` (`id`, `userName`, `content`, `rating`, `imageSrc`) VALUE
 -- Cấu trúc bảng cho bảng `room`
 --
 
+DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room` (
   `room_id` int(3) NOT NULL,
   `room_type` varchar(10) NOT NULL,
@@ -141,6 +147,7 @@ INSERT INTO `room` (`room_id`, `room_type`, `status`) VALUES
 -- Cấu trúc bảng cho bảng `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `ID` int(8) NOT NULL,
   `userName` varchar(32) NOT NULL,
